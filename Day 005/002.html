@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>기본 구조를 가진 표 만들기</title>
+    <style>
+        table, th, td{
+            text-align: center;
+            border: 1px solid black;
+        }
+        img{
+            width: 200px;
+            height:200px;
+        }
+    </style>
+</head>
+<body>
+    <h3>성 적 표</h3>
+    <table>
+        <caption>2023 IT 3기 성적표</caption>
+        <thead><tr><th>이름</th><th>HTML</th><th>CSS</th><th>JavaScript</th></tr></thead>
+        <tbody>
+            <tr><td>홍길동</td><td>10</td><td>20</td><td>30</td></tr>
+            <tr><td>김유신</td><td>35</td><td>45</td><td>70</td></tr>
+            <tr><td>이순신</td><td>65</td><td>32</td><td>58</td></tr>
+            <tr><td>강감찬</td><td>95</td><td>65</td><td>70</td></tr>
+            <tr><td>임꺽정</td><td>5</td><td>31</td><td>27</td></tr>
+        </tbody>
+        <tfoot><tr><th>합계</th><th>210</th><th>193</th><th>255</th></tr></tfoot>
+    </table>
+    <hr color="tomato">
+    <br><br>
+    <h3>표에 이미지 출력하기</h3>
+    <table>
+        <caption>좋아하는 동물</caption>
+            <tbody>
+                <tr>
+                    <td><img src="img/whaleshark.png"></td>
+                    <td><img src="img/pomeranian.png"></td>
+                    <td><img src="img/ShihTzu.png"></td>
+                </tr>
+            </tbody>
+    </table>
+</body>
+</html>
