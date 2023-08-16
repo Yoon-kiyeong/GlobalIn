@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자기 소개서</title>
+    <style>
+        label{
+            align-content: center;
+        }
+    </style>
+</head>
+<body>
+    <h3>자기 소개서</h3>
+    <hr color="red">
+    <form>
+        이름 : <input type="text" value=""><br>
+        자기소개 : <textarea cols="50" rows="10">  </textarea> <!--공백 크기 만큼 커서가 시작하는 위치가 달라짐-->
+    </form>
+
+    <br>
+    <table><!--"자기소개 :"가 중간에 위치하려면 table 태그 활용-->
+        <tbody>
+    <tr>이름 : <input type="text" value=""></tr><br>
+    <tr><td>자기소개 : </td><td><textarea cols="50" rows="10">  </textarea></td></tr>        
+        </tbody>
+    </table>
+
+    <br><br>
+    <hr color="red">
+
+    <h3>데이터 목록</h3>
+    <hr>
+        <h3>가보고 싶은 여행지</h3>
+    <form>
+        나라 : <input type="text" name="country" list="countries">
+            <datalist id="countries">
+                <option value="일본"></option>
+                <option value="덴마크"></option>
+                <option value="뉴질랜드"></option>
+            </datalist>
+
+        보고싶은 것 : <input type="text" list="what">
+            <datalist id="what">
+                <option value="산"></option>
+                <option value="바다"></option>
+                <option value="도시"></option>
+            </datalist>
+    </form>
+    
+    직업의 종류
+    <select> 
+        <option value="개발자">개발자</option>
+        <option value="군인">군인</option>
+        <option value="교육자">교육자</option>
+    </select>
+
+    <br><br>
+    <hr color="red">
+
+    <h3>당신의 취미는 ?</h3>
+    <form>
+        축구 <input type="checkbox" value="1">
+        농구 <input type="checkbox" value="2">
+        야구 <input type="checkbox" value="3">
+        당구 <input type="checkbox" value="4" checked>
+    </form> 
+
+    <br>
+
+    <form>
+        축구 <input type="radio" name="sport" value="1">
+        농구 <input type="radio" name="sport" value="2">
+        야구 <input type="radio" name="sport" value="3">
+        당구 <input type="radio" name="sport" value="4" checked>
+        <!--name 속성의 이름이 같아야만 옵션이 하나만 선택되어짐-->
+    </form> 
+</body>
+</html>

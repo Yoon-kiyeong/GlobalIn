@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--상세 정보를 저장하는 태그 : details
+        details 태그를 구성하는 태그 : summary
+    -->
+    <h3>상세 정보와 요약</h3>
+    <hr>
+    <details>
+        <summary>질문 1</summary>
+        <p>웹 개발자의 필수 언어</p>
+    </details>
+    <details>
+        <summary>정답은 ?</summary>
+        <p>HTML, CSS, JavaScript</p>
+    </details>
+
+    <hr color="red">
+    내일 아침 1교시의 시작 시간은 <time>09:30</time>이며, <br>
+    수업의 난이도<meter value="0.9" max="1.0"> 90% </meter>로 무지하게 쉽다. <br>
+    <!--meter 태그는 소수점(0.0~1.0)으로 % 계산-->
+    수업자료 업로딩 진행률 (80%) <progress value="8" max="10"></progress> <br>
+    <!--progress 태그는 정수(0~10)으로 % 계산-->
+
+    <hr color="red">
+    <br><br>
+    <h3>로그인</h3>
+
+    <form action="aa.html" name="fo" method="get"> 
+        아 이 디 : <input type="text" name="id" size="15" value=""><br>
+        비밀번호 : <input type="password" name="password" size="15" value="">
+        <input type="submit" value="로그인">
+    </form>
+    <!--get 방식 : id & password 입력하면 url 끝에 ? 표시 뒤에 해당 id & password 생성
+        아이디, 비밀번호가 노출되기에 간단하게 form 형성할 때 사용-->
+    
+    <hr color="red">
+        
+     <form action="https://www.naver.com" name="fo" method="post">
+         아 이 디 : <input type="text" name="id" size="15" value=""><br>
+        비밀번호 : <input type="password" name="password" size="15" value="">
+        <input type="submit" value="로그인">
+    </form>
+    <!--post 방식 : id & password 입력하면 url 끝에 ? 표시 뒤에 해당 id & password 생성 안됨
+        "페이지가 작동하지 않습니다" 페이지 생성, 보안 유지를 위해 주로 사용 -->
+</body>
+</html>
