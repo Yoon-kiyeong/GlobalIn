@@ -1,0 +1,54 @@
+/* 
+hr {
+    border:5px solid;
+    color:red;
+}
+
+h3 {
+    color: aquamarine;
+}
+
+body {
+    background-color: salmon;
+}
+
+span {
+    font-size: 30px;
+    color:firebrick;
+} */
+
+/* #aa {
+    background-color:deepskyblue;
+}
+
+#bb {
+    color: aquamarine;
+}
+
+#cc {
+    border: 5px solid;
+    color: red;
+}
+
+#dd {
+    font-size: 30px;
+    color:firebrick;
+} */
+
+.bd {
+    background-color: skyblue;
+}
+
+.hea {
+    color:aquamarine;
+}
+
+.line {
+    border: 5px solid;
+    color: red;
+}
+
+.sp {
+    font-size:30px;
+    color:firebrick;
+}

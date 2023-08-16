@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>색상 선택</title>
+</head>
+
+<body>
+    <form>
+        색 선택
+        <input type="color" value="#fefefe" onchange="document.body.style.color=this.value">
+        <input type="color" value="#00BFFF" onchange="document.body.style.backgroundColor=this.value">
+    </form>
+    <hr color="tomato">
+    <br>
+
+    <h3>회원정보 입력</h3>
+    <form action="">
+        <fieldset>
+            <legend>화면정보</legend>
+            email: <input type="email" placeholder="id@host"><br>
+            홈페이지: <input type="url" placeholder="http://github.com/"><br>
+            전화번호: <input type="tel" placeholder="010-0000-0000"><br>
+        </fieldset>
+        <input type="submit" value="확인">
+        <hr color="tomato">
+        검색어 : <input type="search" placeholder="검색">
+    </form>
+</body>
+
+</html>
