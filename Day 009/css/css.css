@@ -1,0 +1,37 @@
+body {
+    background-color: beige;
+}
+
+h3, li {
+    color: darkorchid;
+}
+
+div > div > strong {
+    background-color: lightsalmon;
+}
+
+.jum {
+    color: dodgerblue;
+}
+
+#list {
+    background-color: coral;
+}
+
+#list span {
+    color: springgreen;
+}
+
+#list strong{
+    color: dimgray;
+}
+
+h3::first-letter {
+    color: black;
+}
+
+li:hover{
+    background-color:oldlace;
+    transition: 0.3s;
+    width:5%;
+}
