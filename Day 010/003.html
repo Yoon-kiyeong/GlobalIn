@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/css.css">
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        td, th{
+            text-align: left;
+            padding: 5px;
+            height: 20px;
+            width: 120px;
+        }
+        thead {
+            background-color:crimson;
+            color: white;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: dodgerblue;
+        }
+
+        tbody tr:nth-child(odd):hover {
+            background-color: aqua;
+        }
+
+        tfoot {
+            background-color: salmon;
+        }
+
+    </style>
+</head>
+<body>
+     <h3>성 적 표</h3>
+    <table border="1px">
+        <caption>2023 IT 3기 성적표</caption>
+        <thead><tr><th>이름</th><th>HTML</th><th>CSS</th><th>JavaScript</th></tr></thead>
+        <tbody>
+            <tr><td>홍길동</td><td>10</td><td>20</td><td>30</td></tr>
+            <tr><td>김유신</td><td>35</td><td>45</td><td>70</td></tr>
+            <tr><td>이순신</td><td>65</td><td>32</td><td>58</td></tr>
+            <tr><td>강감찬</td><td>95</td><td>65</td><td>70</td></tr>
+            <tr><td>임꺽정</td><td>5</td><td>31</td><td>27</td></tr>
+        </tbody>
+        <tfoot><tr><th>합계</th><th>210</th><th>193</th><th>255</th></tr></tfoot>
+    </table>
+    <hr color="tomato">
+
+</body>
+</html>

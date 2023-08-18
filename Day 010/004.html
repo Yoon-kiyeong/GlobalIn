@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/css.css">
+    <style>
+        input[type=text] {
+            color: red;
+        }
+
+        input:hover, textarea:hover {
+            background-color: yellow;
+        }
+
+        input[type=text]:focus,input[type=email]:focus {
+            font-size: 120%;
+        }
+
+        label {
+            display: block;
+            padding: 5px;
+        }
+
+        label span {
+            display: inline-block;
+            width: 100px;
+            text-align: right;
+            padding: 10px;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <label>
+            <span>이 름 </span><input type="text" placeholder="이름">
+        </label>
+        <label>
+            <span>이 메 일 </span> <input type="email" placeholder="이메일">
+        </label>
+        <label>
+            <span> 내 용 </span> <textarea placeholder="내용을 입력하시오" rows="10" cols="40"></textarea>
+        </label>
+        <label>
+            <span></span><input type="submit" 제출>
+        </label>
+    </form>
+</body>
+</html>

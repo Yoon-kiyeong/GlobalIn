@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="./css/css.css">
+    <style>
+        div {
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            border: 2px solid yellowgreen;
+            text-align: center;
+            color: blue;
+            font-size: 50px;
+            background-color: aliceblue;
+        }
+
+        #down:hover {
+            position: relative;
+            left: 30px;
+            top: 30px;
+            background-color: purple;
+        }
+
+        #up {
+            position: relative;
+            right:30px;
+            bottom: 30px;
+            background-color: purple;
+        }
+
+        #hover:hover {
+            background-color: red;
+            color: white;
+            transition: 0.3s;
+        }
+
+        #fixed {
+            position: fixed;
+            bottom: 30px;
+            right: 10px;
+            width: 100px;
+            background-color: red;
+            padding: 5px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- <div>블럭지정안함</div>
+    <div>inline</div>
+    <div>inline-block</div>
+    <div>block</div> -->
+
+    <div>L</div>
+    <div id="down">O</div>
+    <div id="hover">V</div>
+    <div id="up">E</div>
+    <br>
+    <img src="../Day 009/img/pomeranian.png" style="width:300px; height:300px;">
+    <p id="fixed">좀 자고싶다</p>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/css.css">
+    <style>
+        div {
+            display: inline-block;
+            padding: 5px;
+            color: white;
+            background-color: blueviolet;
+        }
+
+        #rotate {
+            transform: rotate(20deg);
+        }
+
+        #screw {
+            transform: skew(0, -20deg);
+        }
+
+        #translate {
+            transform: translateY(300px);
+        }
+
+        #scale {
+            transform: scale(3, 1);
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div id="rotate">회전/rotate(20deg)</div>
+    <div id="screw">기울임/skew(0, -20deg)</div>
+    <div id="translate">이동/translateY(100px)</div>
+    <div id="scale">확대/축소/scale(3, 1)</div>
+</body>
+</html>
