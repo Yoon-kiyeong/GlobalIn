@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main {
+            width :900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background: linear-gradient(to right, black, grey, silver, grey, black);
+        }
+        li {
+            float: left;
+        }
+        li a{
+            display:block;
+            color:white;
+            text-align: center;
+            padding:14px 16px;
+            text-decoration: none;
+        }
+        li a:hover {
+            color:darkgray;
+            transition: 0.6s;
+        }
+        div {
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        .faq{
+            width:35px;
+            height:35px;
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+        }
+        p{
+            width:170px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .lounge{
+            width: 800px;
+            height: 547px;
+            opacity: 40%;
+        }
+        .service {
+        display:flex;
+        }
+
+        .service:active{
+            color:seagreen;
+        }
+
+        .service:visited {
+            color:chartreuse;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Room</a></li>
+        <li><a href="#">Service</a></li>
+        <li><a href="#">FAQ</a></li>
+        <li style="float:right"><a href="#">Contact</a></li>
+    </ul>
+    <div class="main">
+        <h2>GlobaliN Hotel</h2>
+        <div>
+        <img src="./img/hotel.jpg">
+        </div>
+        <div class="lorem">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda quidem nostrum reprehenderit sed nobis natus, ullam molestias! Dignissimos deserunt nostrum laborum quia iste ipsum eius recusandae. Ex quidem nisi quod.</p>
+        </div>
+        <div>
+            <img src="./img/lounge.jpg" class="lounge">
+        </div>
+        <div>
+            <h3>Our Service</h3>
+        <div class="service">
+            <a href="#"><p>Fitness Service</p></a>
+            <a href="#"><p>Swimming Pool</p></a>
+            <a href="#"><p>Laundry Service</p></a>
+            <a href="#"><p>Free Wifi</p></a>
+            <a href="#"><p>Garden</p></a>
+            <a href="#"><p>Daily HouseKeeping</p></a>
+        </div>
+        </div>
+    </div>
+
+    <img src="./img/icon.jpg" class="faq">
+</body>
+</html>
