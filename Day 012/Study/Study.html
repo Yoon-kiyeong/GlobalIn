@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/173560a570.js" crossorigin="anonymous"></script>
+    <style>
+        h1 {
+            text-align: center;
+        }
+
+        fieldset {
+            margin-left: auto;
+            margin-right: auto;
+            width: 25%;
+        }
+
+        #Signin li {
+            list-style: none;
+        }
+
+        #Signin #ID {
+            margin-left: 80px;
+        }
+
+        #Signin #password {
+            margin-left: 63px;
+        }
+
+        #Signin #re-password {
+            margin-left: 30px;
+        }
+
+        #Signin #name {
+            margin-left: 95px;
+        }
+
+        #Signin input[type=email] {
+            margin-left: 80px;
+        }
+
+        #Signin input[type=tel] {
+            margin-left: 64px;
+        }
+
+        #Signin #address {
+            margin-left: 95px;
+        }
+
+        #Signin #gender {
+            margin-left: 90px;
+        }
+
+        ul li {
+            margin: 5px;
+            padding: 1px;
+        }
+
+        .purpose {
+            float: left;
+            display: block;
+        }
+
+        .checkbox {
+            float: left;
+            margin-left: 5%;
+
+        }
+
+        #date {
+            margin-left: 10px;
+        }
+
+        #period {
+            margin-left: 10px;
+        }
+
+        div {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        input[type=submit] {
+            width: 100px;
+            color: white;
+            background-color: #e0651d;
+            cursor: pointer;
+        }
+
+        input[type=submit]:hover {
+            color: #e0651d;
+            background-color: white;
+            transition: 0.4s;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .navbar {
+            display:flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color:#e0651d;
+        }
+
+        .navbar__logo i {
+            color:white;
+        }
+
+        .navbar__menu {
+            display:flex;
+            list-style: none;
+            padding-left:0;
+        }
+
+        .navbar__menu li {
+            padding: 8px 12px;
+        }
+
+        .navbar__menu li:hover {
+            background-color: #d49466;
+            border-radius:4px;
+        }
+
+        .navbar__icons {
+            list-style: none;
+            color: white;
+            display:flex;
+            padding-left: 0;
+        }
+        .navbar__icons li {
+            padding: 8px 12px;
+        }
+
+        .navbar__toggleBtn {
+            display:none;
+            position:absolute;
+            right: 32px;
+            font-size: 24px;
+            color: white;
+        }
+
+        @media screen and (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 8px 24px;
+            }
+
+            .navbar__menu {
+                display: none;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+            }
+
+            .navbar__menu a {
+                display:block;
+            }
+
+            .navbar__icons {
+                display: none;
+                justify-content: center;
+                width:100%;
+            }
+
+            .navbar__toggleBtn {
+                display:block;
+            }
+
+            .navbar__menu.active,
+            .navbar__icons:active {
+                display: flex;
+            }
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>헬스장 상담 신청</h1>
+
+    <nav class="navbar">
+        <div class="navbar">
+        </div>
+
+        <ul class="navbar__menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Trainer</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+
+        <ul class="navbar__icons">
+            <li><i class="fa-brands fa-instagram"></i></li>
+            <li><i class="fa-brands fa-youtube"></i></li>
+        </ul>
+
+        <a href="#" class="navbar__toggleBtn">
+            <i class="fa-solid fa-bars"></i>
+        </a>
+    </nav>
+
+    <form action="">
+        <fieldset>
+            <legend>회원정보</legend>
+            <ul id="Signin">
+                <li><label for="ID">아이디 <input type="text" id="ID" required autofocus placeholder="아이디"></label></li>
+                <li><label for="password">비밀번호 <input type="password" name="password" id="password" required
+                            placeholder="비밀번호"></label></li>
+                <li><label for="re-password">비밀번호 확인<input type="password" name="re-password" id="re-password" required
+                            placeholder="비밀번호 확인"></label></li>
+                <li><label for="name">이름 <input type="text" id="name" required placeholder="이름"></label></li>
+                <li><label >이메일 <input type="email" name="email" id="이메일" required placeholder="이메일"></label>
+                </li>
+                <li><label for="tel">전화번호 <input type="tel" name="tel" id="tel" required placeholder="전화번호"></label>
+                </li>
+                <li><label for="address">주소 <input type="text" id="address" required placeholder="주소"></label></li>
+                <li><label for="gender">성별 <input type="radio" name="gender" id="gender">남성 <input type="radio"
+                            name="gender" id="gender-f">여성</label></li>
+            </ul>
+        </fieldset>
+        <fieldset>
+            <legend>헬스장 등록 목적</legend>
+            <ul class="purpose">
+                <li><label for="health">건강<input type="checkbox" name="health" id="health"></label></li>
+                <li><label for="diet">체중 감량<input type="checkbox" name="diet" id="diet"></label></li>
+                <li><label for="bodyProfile">바디 프로필 촬영 <input type="checkbox" name="bodyProfile" id="bodyProfile"></label>
+                </li>
+                <li><label for="muscle">근육량 증가<input type="checkbox" name="muscle" id="muscle"></label></li>
+            </ul>
+        </fieldset>
+        <fieldset>
+            <legend>주 운동 횟수</legend>
+            <ul>
+                <li>
+                    <select name="routine" id="routine">
+                        <option value="zero">주 0회</option>
+                        <option value="one_or_two">주 1~2회</option>
+                        <option value="three_or_five">주 3~5회</option>
+                        <option value="everyday">주 7회</option>
+                    </select>
+                </li>
+            </ul>
+        </fieldset>
+        <fieldset>
+            <legend>헬스장 등록 일정</legend>
+            <ul>
+                <li>등록일자 <label for="date"><input type="date" name="date" id="date"></label></li>
+                <li>등록기간
+                    <select name="period" id="period">
+                        <option value="oneMonth">1개월</option>
+                        <option value="threeMonth">3개월</option>
+                        <option value="sixMonth">6개월</option>
+                        <option value="oneYear">1년</option>
+                    </select>
+                </li>
+                <li>PT 등록 여부 <label> 예<input type="radio" name="Y"> 아니오<input type="radio" name="N"></label></li>
+            </ul>
+        </fieldset>
+        <div>
+            <input type="submit" value="가입">
+    </form>
+    </div>
+    <script src="./js/app.js"></script>
+</body>
+</html>
