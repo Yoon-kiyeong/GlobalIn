@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            text-align: center;
+        }
+
+        .nav-container {
+            width: 800px;
+            margin: 0 auto;
+            background-color: rgb(201, 48, 48);
+            list-style: none;
+            display: flex;
+            justify-content: center;
+        }
+
+        .nav-item {
+            padding: 15px;
+            margin: 0 50px 0 30px;
+            cursor: pointer;
+        }
+
+        .nav-item:hover {
+            background-color: rgb(68, 7, 7);
+            transition: 0.4s;
+        }
+
+        .nav-item a {
+            text-align: center;
+            text-decoration: none;
+            color: white;
+        }
+
+        .mySlides {
+            display: none;
+        }
+        
+        .img {
+            vertical-align: middle;
+        }
+
+        .slideshow-container {
+            position: relative;
+            margin: auto;
+        }
+
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display:inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .active, .dot:hover {
+            background-color: #717171;
+        }
+
+        .fade {
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+
+        @keyframes fade {
+            from {opacity: .4}
+            to {opacity: 1}
+        }
+        
+        .content-wrapper {
+
+            background-color: chocolate;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .wrapper {
+            width:900px;
+            background-color: tomato;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .content1{
+            background-color: red;
+        }
+
+        .content2{
+            background-color: green;
+        }
+
+        .content3{
+            background-color: blue;
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <nav>
+        <ul class="nav-container">
+            <li class="nav-item"><a href="#">Home</a></li>
+            <li class="nav-item"><a href="#">About</a></li>
+            <li class="nav-item"><a href="#">메뉴</a></li>
+            <li class="nav-item"><a href="#">가까운 매장</a></li>
+            <li class="nav-item"><a href="#">FAQ</a></li>
+        </ul>
+    </nav>
+    <hr color="red">
+    
+    <div class="slideshow-container">
+        <div class="mySlides fade">
+            <img src="./img/banner1.jpg" style="width: 100%">
+        </div>
+    </div>
+
+    <div class="slideshow-container">
+        <div class="mySlides fade">
+            <img src="./img/banner2.jpg" style="width: 100%">
+        </div>
+    </div>
+
+    <div class="slideshow-container">
+        <div class="mySlides fade">
+            <img src="./img/banner3.jpg" style="width: 100%">
+        </div>
+    </div>
+
+    <div class="slideshow-container">
+        <div class="mySlides fade">
+            <img src="./img/banner4.jpg" style="width: 100%">
+        </div>
+    </div>
+
+    <div class="slideshow-container">
+        <div class="mySlides fade">
+            <img src="./img/banner5.jpg" style="width: 100%">
+        </div>
+    </div>
+    <br>
+
+    <div style="text-align: center; padding-bottom:50px;">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+        <span class="dot" onclick="currentSlide(5)"></span>
+    </div>
+
+    <div class="content-wrapper">컨텐츠 래퍼
+        <div class="wrapper"> 래퍼
+            <div class="content1">컨텐츠 1</div>
+            <div class="content2">컨텐츠 2</div>
+            <div class="content3">컨텐츠 3</div>
+        </div>
+    </div>
+
+    <script>
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i <slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";
+            dots[slideIndex-1].className += " active";
+        }
+    </script>
+</body>
+</html>
