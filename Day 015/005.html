@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <script>
+        function insertQuestion() {
+            //수식을 입력받는 대화상자
+            let q = prompt("사칙연산을 입력해주세요.", "");
+            
+            //입력받은 문자열을 수식으로 변환처리함
+            let answer = eval(q);
+            
+            //사용자가 입력한 질문(q)과 계산결과(ans)를 하나의 문자열로 연결함
+            let result = q + " = " + answer;
+            
+            //브라우저에 출력
+            document.getElementById('question').innerHTML = result;            
+        }
+    </script>
+    <title>Document</title>
+</head>
+<body onload="insertQuestion()">
+    <h1 id="question"></h1>
+</body>
+</html>

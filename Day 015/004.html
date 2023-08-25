@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script>
+        //printResult 함수 안에서 호출
+        //두 개의 파라미터 값을 받아서 계산하는 함수
+        function sum(x,y) {
+            let z = x + y;
+            return z;
+        }
+
+        //결과를 출력하는 함수
+        function printResult(){
+            let result = sum(10,50); //함수 호출
+            //document.getElementById('question');
+            // --> id가 quest인 태그를 의미함
+            let myTag = document.getElementById('question');
+            //? 안에 result값을 저장한다.
+            //태그 안에 ?가 들어 있지만 새롭게 지정한 result값이 ?를 지우고 자신이 그 자신이 저장된다.
+            myTag.innerHTML = result;
+        }
+
+        function showResult(){
+            let result = sum(10,50);
+            let red_result = "<font color = 'red'>" + result + "</font>";
+            document.getElementById("question").innerHTML = red_result;
+        }
+
+        function hiddenResult() {
+            document.getElementById("question").innerHTML = "?";
+        
+        }
+    </script>
+</head>
+<body>
+    <h1 onmouseover="showResult()" onmouseout="hiddenResult()">10 + 50 = <span id = "question">?</span></h1>
+    <input type="button" value="결과보기" onclick="printResult()">
+</body>
+</html>
