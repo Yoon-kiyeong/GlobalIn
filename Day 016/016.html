@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/refresh.js"></script>
+</head>
+<body onload="authNo()">
+    <p>
+        고객님의 인증 번호는 <strong id="auth">00000</strong>입니다.
+    </p>
+    <!-- 페이지 새로고침 이벤트 호출 -->
+    <input type="button" value="인증번호 새로받기" onclick="refresh()">
+</body>
+</html>
