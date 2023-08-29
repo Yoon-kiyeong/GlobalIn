@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let sayHello = {
+            "name" : "Javascript",
+            "eng" : function() {
+                let console = document.getElementById('console');
+                console.innerHTML = "Hello" + this.name;
+                console.style.color = "#ff0000";
+            }, 
+            "kor" : function() {
+                let console = document.getElementById('console');
+                console.innerHTML = "Hello" + this.name;
+                console.style.color = "#0000ff";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1> json 형식으로 함수 호출</h1>
+        <input type="button" value="sayEng" onclick="sayHello.eng()">
+        <input type="button" value="sayKor" onclick="sayHello.kor()">
+    <h1 id="console"></h1>
+</body>
+</html>

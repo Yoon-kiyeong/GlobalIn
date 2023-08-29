@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script type="text/javascript" src="./js/jquery-1.11.0.min.js"> </script>
+    <script>
+        //페이지가 열리면서 자동으로 실행되는 코드
+        //크로스 브라우징 지원 코드
+        $(function () {
+            $('#hello').html("Hello jQuery");
+            alert($('#text').html());
+        }); 
+    </script>
+</head>
+<body>
+    <h1 id="hello">안녕하세요</h1>
+    <p id="text">안녕하세요. jQuery</p>
+</body>
+</html>

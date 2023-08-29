@@ -1,0 +1,10 @@
+.input_group {
+    height: 45px;
+    border-bottom: 1px dotted #ccc;
+    font: 1em/40px 'sans-serif',' Helvetica'; 
+}
+
+.input_group > label {
+    width: 100px;
+    display: inline-block;
+}

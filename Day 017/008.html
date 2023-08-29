@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <script>
+        // 게시판의 데이터 표현
+        let bbs = {
+            "title" : "JavaScript 수업 가이드",
+            "description" : "글로벌인에서 진행하는 2023년도 IT 3차 수업 강의 자료 게시판입니다.",
+            "total" : 4,
+            "item" : [
+            {"no":"공지사항","subject":"글로벌인에서 진행하는 2023년도 IT 3차 수업 강의 자료 게시판입니다.","hit":"3","date":"2023.08.03"},
+            {"no":"3","subject":"글로벌인에서 진행하는 2023년도 IT 3일차 수업 강의 자료 게시판입니다.","hit":"3","date":"2023.08.03"},
+            {"no":"2","subject":"글로벌인에서 진행하는 2023년도 IT 2일차 수업 강의 자료 게시판입니다.","hit":"3","date":"2023.08.03"},
+            {"no":"1","subject":"글로벌인에서 진행하는 2023년도 IT 1일차 수업 강의 자료 게시판입니다.","hit":"3","date":"2023.08.03"}
+            ]
+        };
+
+        // bbs 안의 각 독립된 값들에 대한 출력문 생성
+        let html = "<h1>" + bbs.title + "</h1>";
+        html += "<p>" + bbs.description + "</p>";
+        html += "<p> 총 게시물 수 : " + bbs.total + "개</p>";
+        html += "<ul>";
+        // 배열로 표현되어진 게시물 정보에 대한 출력
+        for(let i = 0; i <bbs.item.length; i++) {
+            let item = bbs.item[i];
+            html += "<li>(" + item.no + ") " + item.subject + " (조회수) " + item.hit + " / 날짜 : " + item.date; + "</li>";
+        }
+        html += "</ul>";
+        document.write(html);
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>

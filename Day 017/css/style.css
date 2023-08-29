@@ -1,0 +1,52 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: beige;
+}
+
+.box1 {
+    margin: 10px auto;
+    border: 5px solid #ccc;
+    padding: 30px;
+    text-align: center;
+}
+
+.box2 {
+    margin: 10px auto;
+    border: 10px solid #ff00ff;
+    background-color: #ff0;
+    padding: 25x;
+    text-align: left;
+}
+
+.thumbnail {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    width: 120px;
+    float: left;
+}
+
+.thumbnail li {
+    width: 100px;
+    height: 100px;
+    padding: 5px 10px;
+}
+
+.thumbnail img {
+    width: 100px;
+    height: 100px;
+}
+
+.view {
+    float: left;
+    width: 500px;
+    height: 320px;
+
+}
+
+.view img {
+    width: 500px;
+    height: 325px;
+}
+

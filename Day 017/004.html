@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/form.css">
+    <script src="./js/form.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <form name="form1" onsubmit="doSubmit()">
+        <fieldset>
+            <legend>회원가입</legend>
+            <div class="input_group first">
+                <label for="">이름</label>
+                <input type="text" name="user_name">
+            </div>
+
+            <div class="input_group">
+                <label for="">성별</label>
+                <label for=""><input type="radio" name="gender" value="M"> 남자</label>
+                <label for=""><input type="radio" name="gender" value="F"> 여자</label>
+            </div>
+
+            <div class="input_group">
+                <label for="">직업</label>
+                <select name="job">
+                    <option>----- 선택 하세요 -----</option>
+                    <option value="dev">프로그래머</option>
+                    <option value="pub">웹 퍼블리셔</option>
+                </select>
+            </div>
+
+            <div class="input_group">
+                <label for="">취미</label>
+                <label for=""><input type="checkbox" name="hobby" value="축구">축구</label>
+                <label for=""><input type="checkbox" name="hobby" value="농구">농구</label>
+                <label for=""><input type="checkbox" name="hobby" value="야구">야구</label>
+            </div>
+
+            <div class="input_group">
+                <label for="">&nbsp;</label>
+                    <input type="submit" value="회원가입">
+                    <input type="reset" value="다시 작성">
+             </div>
+        </fieldset>
+    </form>
+</body>
+
+</html>

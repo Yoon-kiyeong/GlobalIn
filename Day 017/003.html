@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/rollover.js"></script>
+    <style>
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            width: 670px;
+        }
+
+        li {
+            float: left;
+        }
+
+        ul:after {
+            content: '';
+            display: block;
+            float: none;
+            clear: both;
+        }
+
+        img {
+            border: none;
+            width: 300px;
+            height:300px;
+        }
+    </style>
+    <title>Document</title>
+</head>
+    <!--
+         롤 오버 메뉴
+         - 마우스가 이미지 위에 올라갔을 때 표시가 변경되어 사용자가 선택한 메뉴로 바뀌는 것을 의미
+    -->
+<body>
+    <ul>
+        <li><a href="#" onmouseover="changeImage('./img/react.png', 'jquery')" onmouseout="changeImage('./img/jquery.png', 'jquery')"><img id="jquery" src="./img/jquery.png" alt=""></a></li>
+        <li><a href="#" onmouseover="changeImage('./img/node.png', 'javascript')" onmouseout="changeImage('./img/javascript.png', 'javascript')"><img id="javascript" src="./img/javascript.png" alt=""></a></li>
+        <li><a href="#" onmouseover="changeImage('./img/jquery.png', 'node')" onmouseout="changeImage('./img/node.png', 'node')"><img id="node" src="./img/node.png" alt=""></a></li>
+        <li><a href="#" onmouseover="changeImage('./img/javascript.png', 'react')" onmouseout="changeImage('./img/react.png', 'react')"><img id="react" src="./img/react.png" alt=""></a></li>
+    </ul>
+</body>
+</html>
