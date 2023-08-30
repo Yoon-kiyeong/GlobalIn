@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/scroll.css">
+    <script src="./js/jquery-1.11.0.min.js"></script>
+    <script>
+        $(function(){
+            $(window).scroll(function() {
+                $("#console").html("스크롤 이동");
+                setTimeout(() => {
+                    // 1.5초 후에 $("#console").html("스크롤 이동"); 이 삭제됨
+                    $("#console").html("");    
+                }, 1500);
+            });
+        });
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="gradientStyle">
+        <h1>스크롤 이벤트</h1>
+        <div id="console">
+
+        </div>
+    </div>
+</body>
+</html>

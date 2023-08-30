@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/event.css">
+    <script type="text/javascript" src="./js/jquery-1.11.0.min.js"></script>
+    <script>
+        $(function() {
+            //키보드가 눌러진 횟수를 카운트 하기 위한 변수 선언
+            let downCnt = 0;
+
+            //키보드가 떨어진 횟수를 카운트 하기 위한 변수 선언
+            let upCount = 0;
+
+            //키가 눌려진 경우 혹은 누르고 있는 동안 카운트 증가
+            $("#input > input[type='text']").keydown(function() {
+                //카운트 증가
+                downCnt++;
+                $('#result').html("down Count = " + downCnt + " , up Count = " + upCount);
+            });
+
+            $("#input > input[type='text']").keyup(function() {
+                upCount++;
+                $('#result').html("down Count = " + downCnt + ", up Count = " + upCount);
+            });
+        });
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    <h1>키보드 이벤트</h1>
+    <div id="input">
+        <input type="text">
+    </div>
+    <h2>키보드 이벤트 결과</h2>
+    <div id="result">
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/event.css">
+    <script src="./js/jquery-1.11.0.min.js"></script>
+    <script>
+        $(function() {
+            $("#backBtn").click(function() {
+                history.back();
+            });
+        });
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    <h1>회원가입</h1>
+    <form action="" name="form1">
+        <div id="input">
+            <h2>회원 정보가 저장되었습니다</h2>
+            <input type="button" value="이전 페이지 이동" class="myButton" id="backBtn">
+        </div>
+    </form>
+</body>
+</html>

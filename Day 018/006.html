@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/event.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/jquery-1.11.0.min.js"></script>
+    <script>
+        $(function() {
+            // id 속성이 join인 form 태그 안의 회원가입(submit) 버튼을 누른 경우 
+            $("#join").submit(function() {
+                // id 입력검사
+                // $(input요소).val : 사용자가 입력한 값을 리턴해 주는 함수
+                let id = $("input[name='user_id']").val();
+                if(!id) {
+                    alert('id를 입력해주세요');
+                    $("input=[name='user_id']").focus();
+                    return false;
+                }
+
+            // 비밀번호 입력 검사
+            if(!$("input[name='user_pw']").val()) {
+                alert("비밀번호를 입력해주세요");
+                $("input=name='user_pw]").focus();
+                return false;
+            }
+            
+            // 주민번호 입력 검사
+            if(!$("input[name='user_juminno']").val()) {
+                alert("주민번호를 입력해주세요");
+                $("input=name='user_juminno]").focus();
+                return false;
+            }
+
+            // 라디오 버튼 선택 여부 검사
+            // $("라디어보튼 선택자").is(":checked") -- 라디오 버튼이 체크되었을 때 true
+                if(!$("input[name='gender']").is(":checked")) {
+                    alert("성별을 선택해주세요");
+                    $("input=name='gender']:eq[0]").focus();
+                    return false;
+            }
+
+            // 이메일 주소 입력 여부
+            if(!$("input[name='email']").val()) {
+                alert("이메일을 입력해주세요");
+                $("input=name='email]").focus();
+                return false;
+            }
+
+            // 홈페이지 주소 입력 여부
+            if(!$("input[name='url']").val()) {
+                alert("홈페이지 주소를 입력해주세요");
+                $("input=name='url]").focus();
+                return false;
+            }
+
+            // 전화번호 입력 여부
+            if(!$("input[name='hpno']").val()) {
+                alert("전화번호를 입력해주세요");
+                $("input=name='hpno']").focus();
+                return false;
+            }
+
+            // 취미(체크박스) 선택 여부
+            if(!$("input[name='hobby']").is(":checked")) {
+                alert("취미를 선택해주세요");
+                $("input=name='hobby']:eq[0]").focus();
+                return false;
+            }
+
+            // select box 선택 여부 검사
+            if($("select[name='job'] > option:selected").index() < 1) {
+                //index < 1 : 1개도 선택없음
+                alert("직업을 선택해주세요");
+                $("select=name='job']").focus();
+                return false;
+            }
+
+            // 입력한 내용을 화면에 출력
+            let user_id = $("input[name='user_id']").val();
+            let user_pw = $("input[name='user_pw']").val();
+            let user_juminno = $("input[name='user_juminno']").val();
+            let user_gender = $("input[name='gender']:checked").val();
+            let user_email = $("input[name='email']").val();
+            let url = $("input[name='url']").val();
+            let hpno = $("input[name='hpno']").val();
+            let job = $("select[name='job'] > option:selected").val();
+
+            // 체크박스의 선택된 항목들을 추출
+            let hobby = $("input[name='hobby']:checked");
+
+            // 추출한 값을 누적하여 저장할 문자열 변수 선언
+            let select_hobby = "";
+            // hobby의 수 만큼 반복적으로 함수 호출
+            hobby.each(function() {
+                // 각각 반복되는 처리 안에서 $(this)는 hobby안에 포함된 개체이다.
+                // ---> 체크된 n번째 체크박스임
+                // 추출된 값을 누적하여 저장한다.
+                select_hobby += $(this).val()+" "
+            });
+
+            // 출력할 문자열
+            let result = "<ul>";
+                result += "<li> 아이디 : " + user_id + "</li>";
+                result += "<li> 비밀번호 : " + user_pw + "</li>";
+                result += "<li> 주민번호 : " + user_juminno + "</li>";
+                result += "<li> 성별 : " + user_gender + "</li>";
+                result += "<li> 이메일 주소 : " + user_email + "</li>";
+                result += "<li> 홈페이지 주소 : " + url + "</li>";
+                result += "<li> 전화번호 : " + hpno + "</li>";
+                result += "<li> 직업 : " + job + "</li>";
+                result += "<li> 취미 : " + select_hobby + "</li>";
+                result += "</ul>";
+
+                $("body").html(result);
+
+            // 전송되면 결과 확인이 안되므로 전송처리를 강제 종료
+            return false;
+            });
+        });
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    <h1>회원가입</h1>
+    <form name="form1" id="join">
+        <div id="input">
+            <h3>아이디</h3>
+            <input type="text" name="user_id">
+
+            <h3>비밀번호</h3>
+            <input type="password" name="user_pw">
+
+            <h3>주민번호</h3>
+            <input type="text" name="user_juminno">
+
+            <h3>성별</h3>
+            <label for=""><input type="radio" name="gender" value="M"> 남자</label>
+            <label for=""><input type="radio" name="gender" value="F"> 여자</label>
+
+            <h3>이메일</h3>
+            <input type="email" name="email">
+
+            <h3>홈페이지</h3>
+            <input type="url" name="url">
+
+            <h3>전화번호</h3>
+            <input type="tel" name="hpno">
+
+            <h3>취미</h3>
+                <label for="">취미</label>
+                <label for=""><input type="checkbox" name="hobby" value="축구">축구</label>
+                <label for=""><input type="checkbox" name="hobby" value="농구">농구</label>
+                <label for=""><input type="checkbox" name="hobby" value="야구">야구</label>
+                
+            <h3>직업</h3>
+            <select name="job">
+                <option>----- 직업을 선택 하세요 -----</option>
+                <option value="dev">프로그래머</option>
+                <option value="pub">웹 퍼블리셔</option>
+                <option value="deg">디자이너</option>
+                <option value="pla">기획</option>
+            </select>
+
+            <input type="submit" value="회원가입" class="myButton">
+            <input type="reset" value="다시 작성" class="myButton">
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/jquery-1.11.0.min.js"></script>
+    <script>
+        $(function () {
+
+            /*
+                input 버튼이 여러개를 지정할 경우
+                :eq(n) 은 특정 선택자가 여러개의 요소를 지정할 경우 사용함
+                그 중에서 하나만을 지정하는 jQuery 전용 선택자임
+            */
+            $("#fade > input:eq(0)").click(function () {
+                $("#fade > div").fadeIn(500);
+            });
+
+            $("#fade > input:eq(1)").click(function () {
+                $("#fade > div").fadeOut(500);
+            });
+
+            $("#fade > input:eq(2)").click(function () {
+                $("#fade > div").fadeToggle(2000);
+            });
+        });
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    <h1>FadeIn / FadeOut</h1>
+    <div id="fade">
+        <input type="button" value="보이기">
+        <input type="button" value="숨기기">
+        <input type="button" value="fade toggle">
+    
+        <div>
+            <img src="./img/1.jpg" width="300px;" height="200px;">
+        </div>
+    </div>
+</body>
+</html>

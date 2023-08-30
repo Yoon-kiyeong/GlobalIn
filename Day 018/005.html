@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/event.css">
+    <script src="./js/jquery-1.11.0.min.js"></script>
+    <script>
+        $(function() {
+            $("form[name='form1']").submit(function() {
+                if(!confirm("정말 저장하시겠습니까?")){
+                    return false;
+                }
+            });
+            
+            $("input[type='reset']").click(function () {
+                if (!confirm("취소하시겠습니까?")) {
+                    return false;
+                }
+            });
+        });
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    <h1>회원가입</h1>
+    <form action="form_ok.html" name="form1">
+        <div id="input">
+            <h3>당신의 이름은 무엇입니까?</h3>
+            <input type="text" name="user_name">
+            <input type="submit" value="저장하기" class="myButton">
+            <input type="reset" value="리셋하기" class="myButton">
+        </div>
+    </form>
+</body>
+</html>

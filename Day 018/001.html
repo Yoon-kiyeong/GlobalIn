@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/event.css">
+    <script type="text/javascript" src="./js/jquery-1.11.0.min.js"></script>
+    <script>
+        $(function() {
+            /* 마우스 버튼을 눌렀을 때 이벤트 //
+            $('#input').mousedown(function() {
+                $('#result').html('마우스를 누른 상태');
+            });
+
+            // 마우스 버튼을 뗐을 때 이벤트
+            $('#input').mouseup(function() {
+                $('#result').html('마우스를 뗀 상태');
+            }); */
+
+            /* 마우스를 올려 놓았을 때 이벤트
+            $('#input').mouseenter(function() {
+                $('#result').html('마우스가 영역안에 있음');
+            });
+
+            // 마우스가 벗어났을 때 이벤트
+            $('#input').mouseleave(function() {
+                $('#result').html('마우스가 영역을 벗어남');
+            }); 
+            */
+
+            // 마우스 클릭했을 때 이벤트
+            $('#input').click(function() {
+                $('#result').html('마우스가 클릭된 상태');
+            });
+
+            // 마우스 더블클릭했을 때 이벤트
+            $('#input').dblclick(function() {
+                $('#result').html('마우스가 더블클릭 된 상태');
+            });
+
+            // 마우스를 댔을 때 이벤트
+            $('#input').hover(function() {
+                $('#result').html('마우스를 갖다 댄 상태');
+            }, function() {
+                $('#result').html('마우스를 갖다 대지 않은 상태');
+            });
+        });
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    <!-- 마우스 이벤트 -->
+    <h1>마우스 이벤트</h1>
+    <div id="input">
+        Do it in Here!
+    </div>
+    <h2>이벤트 결과</h2>
+    <div id="result"></div>
+</body>
+</html>
