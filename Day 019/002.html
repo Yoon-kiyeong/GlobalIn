@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <style>
+        #box {
+            background-color: #98bf21;
+            width: 150px;
+            height :150px;
+            position: absolute;
+            left: 0;
+        }
+    </style>
+    <script src="./js/jquery-1.11.0.min.js"></script>
+    <script>
+        $(function() {
+            $("button:eq(0)").click(function() {
+                // 새로운 내용으로
+                $("#animation-area").html("<div id='box'></div>");
+            });
+
+            //왼쪽으로 300px만큼 이동
+            $("button:eq(1)").click(function() {
+                // css속성은 json형식으로 표현함
+                $("#box").animate({
+                    'left':'300px',
+                    'width':'300px',
+                    'height':'300px'
+                },2000 ,'swing',function(){
+                    // swing : 끝에가서 속도가 살짝 느려지는 효과
+                    // linear : 동일한 속도로 
+                    alert("애니메이션이 종료되었습니다.");
+                });
+            });
+
+            $("button:eq(2)").click(function() {
+                // 속성을 제외한 나머지 파라미터도 생략 가능함
+                // 속성은 여러개 나열할 때는 JSON형식을 취한다
+                $("div").animate({
+                    'left':'200px',
+                    'width':'50px',
+                    'height':'50px'
+                });
+            });
+
+            $("button:eq(3)").click(function() {
+                $("div").animate({
+                    'left' : '+=50px',
+                    'width' : '+=50px',
+                    'height' : '+=50px'
+                }, 300);
+            });
+            
+            $("button:eq(4)").click(function() {
+                let div = $("#box");
+                div.animate({'height' : '500px'}, 1000);
+                div.animate({'width' : '500px'}, 500);
+                div.animate({'height' : '1000px'}, 800);
+                div.animate({'width' : '1000px'}, 300);
+            });
+        });
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    <h1>Animate</h1>
+    <button>Reset</button>
+    <button>Animation1</button>
+    <button>Animation2</button>
+    <button>Animation3</button>
+    <button>Animation4</button>
+    <div id="animation-area">
+        <div id="box"></div>
+    </div>
+</body>
+</html>

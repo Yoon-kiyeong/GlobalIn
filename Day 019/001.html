@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/jquery-1.11.0.min.js"></script>
+    <script>
+        $(function (){
+            // 첫번째 링크를 클릭한 경우 (1.jpg)
+            $(".item:eq(0)").click(function() { //fade로 바꿔보자
+                // 링크의 주소에 지정된 href 속성 값을 가지고 와야 함
+                let image = $(this).attr("href");
+
+                // 이미지 영역을 0.5초간 숨기고
+                $("#view").hide(500, function(){
+                    // 이미지가 사라진 다음에는 이미지의 경로를 클릭한 링크의 href 속성값으로 바뀌게 된다.
+                    $("#view img").attr("src", image);
+                    // 이미지 바뀐 다음 다시 화면에 출력한다.
+                    $(this).show(300);
+                });
+                return false;
+            });
+
+            // 두번째 링크를 클릭한 경우 (1.jpg)
+            $(".item:eq(1)").click(function() {
+                // 링크의 주소에 지정된 href 속성 값을 가지고 와야 함
+                let image = $(this).attr("href");
+
+                // 이미지 영역을 0.5초간 숨기고
+                $("#view").fadeOut(500, function(){
+                    // 이미지가 사라진 다음에는 이미지의 경로를 클릭한 링크의 href 속성값으로 바뀌게 된다.
+                    $("#view img").attr("src", image);
+                    // 이미지 바뀐 다음 다시 화면에 출력한다.
+                    $(this).fadeIn(300);
+                });
+                return false;
+            });
+
+            // 세번째 링크를 클릭한 경우 (1.jpg)
+            $(".item:eq(2)").click(function() {
+                // 링크의 주소에 지정된 href 속성 값을 가지고 와야 함
+                let image = $(this).attr("href");
+
+                // 이미지 영역을 0.5초간 숨기고
+                $("#view").slideUp(500, function(){
+                    // 이미지가 사라진 다음에는 이미지의 경로를 클릭한 링크의 href 속성값으로 바뀌게 된다.
+                    $("#view img").attr("src", image);
+                    // 이미지 바뀐 다음 다시 화면에 출력한다.
+                    $(this).slideDown(300);
+                });
+                return false;
+            });
+        });
+    </script>
+    <style>
+        #thumb {
+            padding: 0;
+            margin: 0;
+            width: 100px;
+            float: left;
+            list-style: none;
+        }
+        #thumb li {
+            padding: 5px 10px;
+        }
+
+        #thumb img {
+            width: 80px;
+            height: 80px;
+        }
+
+        #view {
+            padding: 5px 0;
+            width: 300px;
+            height: 270px;
+            float: left;
+        }
+
+        #view img{
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+    <script>
+
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    <ul id="thumb">
+        <li><a href="./img/1.jpg" class="item"><img src="./img/1.jpg"></a></li>
+        <li><a href="./img/2.jpg" class="item"><img src="./img/2.jpg"></a></li>
+        <li><a href="../Day 017/img/whaleshark.png" class="item"><img src="../Day 017/img/whaleshark.png"></a></li>
+    </ul>
+    
+    <div id="view">
+        <img src="../Day 017/img/whaleshark.png">
+    </div>
+</body>
+</html>
