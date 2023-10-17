@@ -153,3 +153,8 @@ drop column job;
 -- emp01 테이블 삭제
 drop table emp01;
 select * from tab;
+
+-- 테이블명 변경
+rename emp02 to emp03;
+select * from tab;
+select * from emp03;
