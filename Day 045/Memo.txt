@@ -1,0 +1,152 @@
+View
+- 뷰는 '보다'란 의미를 갖고 있는 점을 감안해 보면 실제 테이블에 저장된 데이터를 뷰를 통해서 볼 수 있도록 함
+- 뷰를 흔히 가상테이블이라고 부름, 이는 테이블과 거의 동일하게 사용하기 때문임
+- 뷰는 물리적인 구조인 테이블과 달리 저장공간이 없다.
+- 뷰는 쿼리문을 저장하고 있는 객체라고 표현한다.
+
+뷰의 사용목적
+- 직접적인 테이블 접근을 제한하기 위해 사용
+- 복잡한 질의를 쉽게 만들기 위해 사용
+
+뷰의 특징
+- 뷰는 테이블에 대한 제한을 가지고 테이블의 일정한 부분만 보일 수 있는 가상 테이블이다.
+- 뷰는 실제 자료를 갖지는 않지만, 뷰를 통해 테이블을 관리할 수 있다.
+- 하나의 테이블에 뷰의 개수는 제한이 없다.
+
+- 뷰를 생성하기 위해서는 테이블 생성과 동일함
+
+기본 테이블
+- 뷰에 의해 제한적으로 접근해서 사용하는 실질적으로 데이터를 저장하고 있는 물리적인 테이블을 의미함
+
+뷰 생성
+- 뷰는 테이블처럼 하나의 개체로서 테이블을 생성할 때와 유사하게 create 명령어로 생성한다
+
+형식
+- create or replace force | noforce view view_name
+as subquery
+with check option
+with read only; --> 뷰를 통해서는 select만 가능함
+
+or replace
+- 새로운 뷰를 만들수 있을 뿐만이 아니라 기존에 뷰가 존재하더라도 삭제하지 않고 새로운 구조로 뷰를 생성할 수 있음
+
+force | noforce
+- 기본 테이블의 존재 여부에 상관없이 뷰를 생성함
+
+with check option
+- 해당 뷰를 통해서 볼 수 있는 범위 내에서만 update or insert 가 가능함
+
+뷰의 종류
+단순 뷰
+- 하나의 테이블로 만들어짐
+- 그룹함수 사용불가
+- distinct 사용이 불가능
+- DML 사용가능(추가, 수정, 삭제)
+
+복합 뷰
+- 두 개 이상의 기본 테이블에 의해 정의된 뷰
+- 여러 개의 테이블로 만들어짐
+- 그룹함수 사용가능
+- distinct 사용가능
+- 사용 불가능
+
+뷰 수정을 위한 or replace
+- create view 대신 create or replace view를 사용하면 존재하지 않는 뷰이면 새롭게 만들고, 기존에 뷰가 존재하면 내용을 변경하여 만듦
+
+기본 테이블 없이 뷰를 생성하기 위한 force 옵션
+기본 테이블이 존재하지 않더라도 뷰를 생성하려면 force 옵션을 사용하면 됨
+
+with check option : 뷰를 생성할 때 조건으로 지정한 컬럼값을 바꾸지 못하게 지정하는 옵션
+
+with read only
+- 뷰를 통해서는 기본 테이블의 어떤 컬럼에 대해서도 내용을 변경할 수 없도록 하는 것을 의미함
+
+시퀀스 : 유일한 값을 생성해 주는 오라클 객체임
+시퀀스를 생성하면 기본키와 같이 순차적으로 ㅈ으가하는 컬럼을 자동적으로 생성할 수 있음
+
+시퀀스 형식
+create sequence 시퀀스명
+start with n
+increment by n
+maxvalue n | nomaxvalue
+minvalue n | nominvalue
+cycle | nocycle
+cache n | nocache
+
+1. start with n
+시퀀스의 시작값을 지정함
+
+2. increment by n
+시퀀스의 증가 값을 지정함
+
+3. maxvalue n | nomaxvalue
+시퀀스가 증가할 수 있는 최대값을 지정
+지정하지 않으면 무한대로
+
+4. minvalue n | nominvalue
+시퀀스가 감소할 수 있는 최소값을 지정
+지정하지 않으면 무한소로
+
+5. cycle | nocycle
+지정된 시퀀스 값이 최대값까지 증가가 완료되면 다시 최소값에서부터 시작하도록 하려면 cycle로 지정하면 됨
+
+6. cache n | nocache
+오라클 서버가 미리 지정하고 메모리에 유지할 값을 지정함
+기본값은 20이며 nocache는 관리하지 않음
+
+시퀀스 수정, 삭제
+시퀀스 수정 
+alter sequence 시퀀스명
+increment by n
+maxvalue n | nomaxvalue
+minvalue n | nominvalue
+cycle | nocycle
+cache n | nocache
+
+사용자 관리와 시스템 권한 부여
+
+시스템 권한
+create session : db에 연결할 수 있는 권한
+create table : table을 생성할 수 있는 권한
+create sequence : 시퀀스를 생성할 수 있는 권한
+create view : 뷰를 생성할 수 있는 권한
+
+사용자 생성형식
+create user user_name identified by password;
+
+JDBC를 이용한 데이터베이스 연결방법
+1. import java.sql.*;
+2. 특정 Driver 검색
+oracle.jdbc.driver.OracleDriver
+Classfor.forName("oracle.jdbc.driver.OracleDriver);
+3. DataBase 와 연결
+url ==> jdbc:oracle:thin:@localhost1521:xe
+Connection con = DriverManager.getConnection(url,id,password);
+4. 쿼리문 작성
+5. 결과 저장
+6. 사용 후 반드시 close(); 데이터베이스 연결 해제
+
+Connection 객체는 데이터베이스와 연결을 담당하는 객체임
+Connection 객체를 이용해서 쿼리문을 전송, 실행할 수 있는 Statement 객체를 얻을 수 있음
+close(), commit(), createStatement(), prepareStatement(String sql), executeQuery(String sql), rollback(), setAutoCommit(boolean value)
+
+DriverManager 클래스는 static 메소드인 getConnection()메소드을 이용해서 데이터베이스와 연결된 Connection 객체를 반환함
+오라클 url : "jdbc:oracle:thin:@localhost:1521:xe";
+id : 오라클의 사용자명
+password: 사용자 비밀번호
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
