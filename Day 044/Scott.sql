@@ -166,14 +166,28 @@ select ename, sal from emp where sal >= (select sal from emp where ename='SCOTT'
 -- 문2) 직급이 사원인 사람의 부서와 부서번호와 부서명과 지역명을 출력하시오
 select deptno, dname loc from dept where deptno in (select deptno from emp where job = 'clerk');
 -- 문3) 이름에 T를 포함하고 있는 사원들과 같은 부서에 근무하고 있는 사원의 사원번호, 이름을 출력하시오
-select empno 
+select empno, ename from emp where deptno in(select deptno from emp where ename like '%T%');
 -- 문4) 부서위치가 DALLAS인 모든 사원의 이름, 부서번호를 출력하시오
-
+select ename, deptno from emp where deptno = (select deptno from dept where loc='DALLAS');
 -- 문5) SALES 부서의 모든 사원의 이름과 급여를 출력하시오
-select ename, sal from emp where job = 'SALESMAN';
+select ename, sal from emp where deptno = (select deptno from dept where dname = 'SALES');
 -- 문6) KING에게 보고 하는 모든 사원의 이름과 급여를 출력하시오
-select ename, sal from emp where MGR = 7839;
+select ename, sal, mgr from emp where mgr in (select empno from emp where ename='KING');
 -- 문7) 자신의 급여가 평균 급여보다 많고 이름에 S가 들어가는 사원과 동일한 부서에서 근무하는 모든 사원의 사원번호, 이름 및 급여를 출력하시오
+select empno, ename, sal from emp where deptno in(select deptno from emp where sal > (select avg(sal) from emp) and ename Like '%S%');
 
+create table member2(
+id varchar2(20) primary key,
+name varchar2(20),
+pw varchar2(20),
+class number(2),
+tel varchar2(20));
 
+insert into member2(id, name, pw, class, tel)
+values ('rrr','김김김','1234a',1,'010-1234-5678');
+insert into member2(id, name, pw, class, tel)
+values ('aaa','이이이','123434a',2,'010-2345-6789');
+insert into member2(id, name, pw, class, tel)
+values ('vvv','박박박','1234123a',3,'010-3456-7890');
 
+commit;
