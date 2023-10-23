@@ -7,6 +7,9 @@ public class User {
 	private String userGender;
 	private String userEmail;
 
+	public User() {
+	}
+
 	public String getUserID() {
 		return userID;
 	}
@@ -47,7 +50,4 @@ public class User {
 		this.userEmail = userEmail;
 	}
 
-	public User() {
-
-	}
 }

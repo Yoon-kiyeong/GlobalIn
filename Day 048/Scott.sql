@@ -15,3 +15,15 @@ nocycle;
 commit;
 
 select * from visit;
+
+create table USERT (
+userID varchar2(20),
+userPassword varchar2(20),
+userName varchar2(20),
+usergender varchar2(20),
+userEmail varchar2(50),
+PRIMARY KEY (userID));
+
+desc usert;
+
+insert into usert values('gildong', '123456', 'È«±æµ¿', '³²ÀÚ', 'gildong@naver.com');
