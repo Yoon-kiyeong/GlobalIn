@@ -1,0 +1,66 @@
+Servlet Programming
+1. Container(컨테이너)
+- 컨테이너는 웹 서버와 서블릿 사이의 통신을 지원
+- 컨테이너는 생명 주기를 관리한다.
+- 컨테이너는 새로운 요청이 들어올 때마다 자바 스레드를 생성해서 사용자의 요청을 처리한다.
+- 컨테이너는 선언저긴 방법으로 보안 관련 내용을 설정할 수 있다.
+
+2. Servlet(서블릿)
+- 서블릿은 웹 서버에서 실행되는 자바 프로그램이다.
+- 서블릿은 사용자의 요구에 따라 동적으로 웹 컨텐츠를 생산해서 클라이언트측에 전송하는 자바 기술이다.
+- javax.servlet.http.HttpServlet 클래스를 상속 받아서 사용자 정의 서블릿 프로그램을 작성한다.
+
+3. get방식과 POST방식
+1) GET 방식
+- 서버에 있는 정보를 가져오기 위해 설계됨
+- 240바이트까지 전달
+- QUERY_STRING 환경변수를 통해 전달
+- 형식 : http://www.xxx.co.kr/servlet/login?id=test&pw=1234
+- URL 노출로 보안성이 요구되는 경우에는 사용을 제한함
+
+2) POST 방식
+- 서버로 정보를 올리기 위해 설계
+- 데이터의 크기는 제한이 없음
+- URL에 파라미터가 표시되지 않음
+
+4. 서블릿의 실행 과정
+- 사용자가 URL을 클릭해서 컨테이너에 새로운 요청을 한다.
+- 컨테이너는 요청을 접수한 다음, HttpServletRequst, HttpServletResponse 객체를 생성함
+- 접수된 URL을 분석해서 해당 서블릿 객체츨 생성하고, 사용자의 요청을 처리하기 위해 스레드를 생성함
+- 서블릿을 Service() 메소드를 호출하고, 요청방식에 따라서 어떤 메소드를 호출할 지 결정함
+- 서블릿의 doGet()메소드를 호출해서 사용자의 요청을 처리하고, 응답을 작성함
+- 작성된 응답을 클라이언트에게 전송함
+- 사용자의 요청을 처리하기 위해 생성한 스레드를 소멸시킴
+
+초기 파라미터
+1. ServletConfig
+- ServletConfig 객체는 Container가 서블릿을 생성할 때 생성되는 객체이다.
+- DD(web.xml)를 읽어서 이름 / 값의 쌍으로 된 초기 파라미터를 읽어서 저장함
+- ServiceConfig 객체는 Servlet 객체당 한 개씩 생성함
+- Servlet에서는 getServletConfig()를 이용해서 Servlet과 관련된 ServletConfig 객체를 얻을 수 있음
+2. ServletContext
+- ServletContext 객체는 Web Application 당 하나씩 생성함
+- Web Application 전체에서 참조할 수 있는 초기화 파라미터를 저장할 수 있다.
+- Servlet에서는 getServletContext()를 이용해서 ServletContext 객체를 얻을 수 있음
+
+- ServletContext는 이름/값 형식으로 쌍으로 저장됨
+<context-param>
+    <param-name>company</param-name> 
+    <param-value>Global In</param-value>
+</context-param>
+ 	
+- ServiceConfig는 이름/값 형식으로 쌍으로 저장됨
+<servlet-mapping>
+    <servlet-name>LifeServlet</servlet-name>
+    <url-pattern>/LifeCycle</url-pattern>
+</servlet-mapping>
+	
+<servlet-mapping>
+    <servlet-name>전화번호</servlet-name>
+    <url-pattern>010-1111-2222</url-pattern>
+</servlet-mapping>
+	
+<servlet-mapping>
+    <servlet-name>LifeServlet</servlet-name>
+    <url-pattern>/B</url-pattern>
+</servlet-mapping> 
