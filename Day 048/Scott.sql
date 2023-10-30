@@ -67,15 +67,22 @@ bunji varchar2(20),
 constraint ZIPCODE_PK primary key(seq));
 
 create table student(
-id 
-pass
-name
-phone1
-phone2
-phone3
-email
-zipdcode
-address1
-address2
-address
+id varchar2(12) not null,
+pass varchar2(12) not null,
+name varchar2(10) not null,
+phone1 varchar2(3) not null,
+phone2 varchar2(4) not null,
+phone3 varchar2(4) not null,
+email varchar2(50) not null,
+zipdcode varchar2(7) not null,
+address1 varchar2(120) not null,
+address2 varchar2(50) not null,
+constraint STUDENT_PK primary key(id)
 );
+
+drop table student;
+select * from student;
+
+commit;
+
+select * from zipcode;
