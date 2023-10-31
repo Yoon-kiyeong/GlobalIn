@@ -26,7 +26,7 @@ PRIMARY KEY (userID));
 
 desc usert;
 
-insert into usert values('gildong', '123456', 'È«±æµ¿', '³²ÀÚ', 'gildong@naver.com');
+insert into usert values('gildong', '123456', 'È«ï¿½æµ¿', 'ï¿½ï¿½ï¿½ï¿½', 'gildong@naver.com');
 
 select * from usert;
 
@@ -44,13 +44,13 @@ create table tempmember (
 );
 
 insert into tempmember 
-values('aaa', '1111', 'È«±æµ¿', 'aaa1', 'aaa2', 'hong@gmail.com', '010-1111-1111', '100-10', '¼­¿ï ±¸·Î±¸', 'ÇÁ·Î±×·¡¸Ó');
+values('aaa', '1111', 'È«ï¿½æµ¿', 'aaa1', 'aaa2', 'hong@gmail.com', '010-1111-1111', '100-10', 'ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Î±ï¿½', 'ï¿½ï¿½ï¿½Î±×·ï¿½ï¿½ï¿½');
 
 insert into tempmember 
-values('bbb', '2222', '±èÃ¶¼ö', 'bbb1', 'bbb2', 'kim@gmail.com', '010-2222-2222', '200-20', '¼­¿ï ¿µµîÆ÷±¸', '¼±»ý´Ô');
+values('bbb', '2222', 'ï¿½ï¿½Ã¶ï¿½ï¿½', 'bbb1', 'bbb2', 'kim@gmail.com', '010-2222-2222', '200-20', 'ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½', 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½');
 
 insert into tempmember 
-values('ccc', '3333', '½ÅÂ¯±¸', 'bbb1', 'bbb2', 'sin@gmail.com', '010-333-3333', '300-30', '¼­¿ï ¿ë»ê±¸', '¿ä¸®»ç');
+values('ccc', '3333', 'ï¿½ï¿½Â¯ï¿½ï¿½', 'bbb1', 'bbb2', 'sin@gmail.com', '010-333-3333', '300-30', 'ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ê±¸', 'ï¿½ä¸®ï¿½ï¿½');
 
 select * from tempmember;
 
@@ -87,44 +87,4 @@ commit;
 
 select * from zipcode;
 
-create table board(
-num number(7) not null,
-writer varchar2(12) not null,
-email varchar2(30) not null,
-subject varchar2(50) not null,
-pass varchar2(10) not null,
-readcount number(5) default 0 not null,
-ref number(5) default 0 not null,
-step number(3) default 0 not null,
-depth number(3) default 0 not null,
-regdate timestamp(6) default sysdate not null,
-content varchar2(4000) not null,
-ip varchar2(20) not null,
-constraint BOARD_PK primary key(num));
 
-create sequence board_seq
-start with 1
-INCREMENT BY 1
-NOMAXVALUE
-NOCACHE
-NOCYCLE;
-
-create table Test1 (
-name varchar2(10) not null,
-id varchar2(20) not null,
-major varchar2(20) not null);
-
-insert into Test1 
-values('È«±æµ¿','0112013','ÄÄÇ»ÅÍ°øÇÐ');
-
-insert into Test1 
-values('±èÀ¯½Å','1014011','Á¦¾î°èÃø°øÇÐ');
-
-insert into Test1 
-values('ÀÌ¼ø½Å','0794012','»ý¸í°øÇÐ');
-
-select * from Test1;
-
-commit;
-
-select * from board;
