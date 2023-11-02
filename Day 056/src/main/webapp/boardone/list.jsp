@@ -150,6 +150,7 @@ number = count - (currentPage - 1) * pageSize;
 				endPage = pageCount;
 
 			if (startPage > pageBlock) {
+				
 		%>
 		<a href="list.jsp?pageNum=<%=startPage - pageBlock%>">[이전]</a>
 		<%
