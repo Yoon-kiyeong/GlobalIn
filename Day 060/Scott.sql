@@ -88,7 +88,6 @@ commit;
 select * from zipcode;
 
 create table stock (
-
 num number(5) not null,
 value number(5) default 0 not null,
 constraint STOCK_PK primary key(num));
