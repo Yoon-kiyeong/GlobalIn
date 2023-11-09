@@ -104,3 +104,13 @@ insert into stock values(9, 255);
 insert into stock values(10, 110);
 
 commit;
+
+select * from tempmember;
+
+
+
+
+
+
+
+

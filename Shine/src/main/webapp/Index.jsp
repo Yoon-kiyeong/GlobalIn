@@ -15,7 +15,6 @@
 				<input type="text" name="ID" required=""> <label>Username</label>
 			</div>
 			<div class="user-box">
-
 				<input type="password" name="password" required=""> <label>Password</label>
 			</div>
 			<input type="submit" id="submit" value="login">

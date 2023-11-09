@@ -1,88 +1,48 @@
-@import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
-@import url(https://fonts.googleapis.com/css?family=Titillium+Web:300);
-
-
-
-.main-menu {
-background:#212121;
-border-right:1px solid #e5e5e5;
-position:absolute;
-top:10%;
-bottom:0;
-height:80%;
-left:0;
-width:150px;
-overflow:hidden;
--webkit-transition:width .05s linear;
-transition:width .05s linear;
--webkit-transform:translateZ(0) scale(1,1);
-z-index:1000;
-text-align: center;
+body {
+  font-family: "Lato", sans-serif;
 }
 
-.main-menu>ul {
-margin:7px 0;
+.sidenav {
+  height: 100%;
+  width: 200px;
+  position:fixed;
+  z-index: 1;
+  top: 10%;
+  height:50%;
+  left: 0;
+  background-color: #3D9970;;
+  overflow-x: hidden;
+  padding-top: 20px;
 }
 
-.main-menu li {
-position:relative;
-display:block;
-width:150px;
+.sidenav a, .dropdown-btn {
+  padding:6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color:#fff;
+  display:block;
+  border:none;
+  background:none;
+  width: 100%;
+  text-align: left;
+  cursor:pointer;
+  outline: none;
 }
 
-.main-menu li>a {
-position:relative;
-display:table;
-border-collapse:collapse;
-border-spacing:0;
-color:#fff;
- font-family: arial;
-font-size: 14px;
-text-decoration:none;
--webkit-transform:translateZ(0) scale(1,1);
--webkit-transition:all .1s linear;
-transition:all .1s linear;
+.sidenav a:hover, .dropdown-btn:hover {
+  background-color: #fff;
+  color:#3D9970;
+}
+
+.active {
+  background-color: #3D9970;;
+  color: #fff;
   
 }
 
-.main-menu .nav-text {
-position:relative;
-display:table-cell;
-vertical-align:middle;
-width:190px;
-  font-family: 'Titillium Web', sans-serif;
+.dropdown-container {
+  display: none;
+  background: #3D9970;
+  padding-left:8px;
 }
 
-a:hover,a:focus {
-text-decoration:none;
-}
-
-nav {
--webkit-user-select:none;
--moz-user-select:none;
--ms-user-select:none;
--o-user-select:none;
-user-select:none;
-}
-
-nav ul,nav li {
-outline:0;
-margin:25px 0px 35px 0px;
-padding:0;
-}
-.main-menu li:hover>a,nav.main-menu li.active>a,.dropdown-menu>li>a:hover,.dropdown-menu>li>a:focus,.dropdown-menu>.active>a,.dropdown-menu>.active>a:hover,.dropdown-menu>.active>a:focus,.no-touch .dashboard-page nav.dashboard-menu ul li:hover a,.dashboard-page nav.dashboard-menu ul li.active a {
-color:#fff;
-background-color:#000000;
-}
-.area {
-float: left;
-background: #e2e2e2;
-width: 100%;
-height: 100%;
-}
-@font-face {
-  font-family: 'Titillium Web';
-  font-style: normal;
-  font-weight: 300;
-  src: local('Titillium WebLight'), local('TitilliumWeb-Light'), url(http://themes.googleusercontent.com/static/fonts/titilliumweb/v2/anMUvcNT0H1YN4FII8wpr24bNCNEoFTpS2BTjF6FB5E.woff) format('woff');
-}
