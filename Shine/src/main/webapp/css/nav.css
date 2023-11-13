@@ -1,48 +1,51 @@
 body {
-  font-family: "Lato", sans-serif;
+	font-family: "Lato", sans-serif;
 }
 
 .sidenav {
-  height: 100%;
-  width: 200px;
-  position:fixed;
-  z-index: 1;
-  top: 10%;
-  height:50%;
-  left: 0;
-  background-color: #3D9970;;
-  overflow-x: hidden;
-  padding-top: 20px;
+	border: 2px solid #3D9970;
+	border-radius: 20px;
+	width: 200px;
+	position: fixed;
+	z-index: 1;
+	top: 11%;
+	height: 80%;
+	left: 10px;
+	background-color: #fefefe;
+	overflow-x: hidden;
+	padding-top: 20px;
 }
 
 .sidenav a, .dropdown-btn {
-  padding:6px 8px 6px 16px;
-  text-decoration: none;
-  font-size: 20px;
-  color:#fff;
-  display:block;
-  border:none;
-  background:none;
-  width: 100%;
-  text-align: left;
-  cursor:pointer;
-  outline: none;
+	padding: 10px 0 10px 0;
+	text-decoration: none;
+	font-size: 20px;
+	color: #3D9970;
+	display: block;
+	border: none;
+	background: none;
+	width: 100%;
+	text-align: center;
+	cursor: pointer;
+	outline: none;
 }
 
 .sidenav a:hover, .dropdown-btn:hover {
-  background-color: #fff;
-  color:#3D9970;
+	background-color: #3D9970;
+	color: white;
 }
 
 .active {
-  background-color: #3D9970;;
-  color: #fff;
-  
+	background-color: #3D9970;
+	color: white;
 }
 
 .dropdown-container {
-  display: none;
-  background: #3D9970;
-  padding-left:8px;
+	display: none;
+	background-color: white;
+	padding-left: 8px;
 }
 
+.dropdown-container ul {	
+	list-style-color: #3D9970;;
+}
