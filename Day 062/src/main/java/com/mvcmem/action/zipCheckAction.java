@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.mvcmem.control.ActionForward;
 import com.mvcmem.model.StudentDAO;
-import com.mvcmem.model.ZipcodeVO;
+import com.mvcmem.model.ZipCodeVO;
 
 public class zipCheckAction implements Action {
 
@@ -20,7 +20,7 @@ public class zipCheckAction implements Action {
 		String check = request.getParameter("check");
 		String dong = request.getParameter("dong");
 		
-		Vector<ZipcodeVO> zipcodeList = dao.zipcodeRead(dong);
+		Vector<ZipCodeVO> zipcodeList = dao.zipcodeRead(dong); 
 		
 		int totalList = zipcodeList.size();
 		

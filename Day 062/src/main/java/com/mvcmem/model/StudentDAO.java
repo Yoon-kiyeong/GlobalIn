@@ -83,20 +83,21 @@ public class StudentDAO {
 	} // end idCheck
 
 	// 우편번호를 데이터베이스에서 검색해서 Vector에 저장해서 리턴해주는 메소드 구현
-	public Vector<ZipcodeVO> zipcodeRead(String dong) {
+	public Vector<ZipCodeVO> zipcodeRead(String dong) {
+		
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		Vector<ZipcodeVO> vecList = new Vector<ZipcodeVO>();
-
+		Vector<ZipCodeVO> vecList = new Vector<ZipCodeVO>();
+		
 		try {
 			con = getConnection();
-
-			String sql = "select * from zipcode where dong like '%" + dong + "%'";
+			// 동으로 검색하여 데이터 획득
+			String sql ="select * from zipcode where dong  like '"+dong+"%'";
 			pstmt = con.prepareStatement(sql);
 			rs = pstmt.executeQuery();
-			while (rs.next()) {
-				ZipcodeVO tempZipcode = new ZipcodeVO();
+			while(rs.next()) {
+				ZipCodeVO tempZipcode = new ZipCodeVO();
 				tempZipcode.setZipcode(rs.getString("zipcode"));
 				tempZipcode.setSido(rs.getString("sido"));
 				tempZipcode.setGugun(rs.getString("gugun"));
@@ -105,30 +106,20 @@ public class StudentDAO {
 				tempZipcode.setBunji(rs.getString("bunji"));
 				vecList.addElement(tempZipcode);
 			}
-
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-			if (rs != null)
-				try {
-					rs.close();
-				} catch (SQLException e) {
-				}
-			if (pstmt != null)
-				try {
-					pstmt.close();
-				} catch (SQLException e) {
-				}
-			if (con != null)
-				try {
-					con.close();
-				} catch (SQLException e) {
-				}
-		}
+			
+		}catch(SQLException s){
+	    	s.printStackTrace();
+	    }catch(Exception e){
+	    	e.printStackTrace();
+	    }finally {
+	    	
+	    	if(rs != null) try {rs.close();}catch(SQLException ss){}
+	    	if(pstmt != null) try {pstmt.close();}catch(SQLException ss){}
+	    	if(con != null) try {con.close();}catch(SQLException ss){}
+	    }
+		
 		return vecList;
-	} // end zipcodeRead
+	}// end zipcodeRead
 
 	// 회원가입 폼에서 회원가입 버튼을 누르면 실제 데이터베이스로 회원정보가 저장될 수 있는 기능을 구현
 	public boolean memberInsert(StudentVO vo) {
