@@ -1,0 +1,54 @@
+.theme-toggler_checkbox {
+	opacity: 0;
+	position: relative;
+	right: 30px;
+	z-index: 1;
+}
+
+.theme-toggler__switch {
+	width: 50px;
+	height: 25px;
+	border-radius: 1em;
+	position: relative;
+	cursor: pointer;
+	background: #eee;
+	border: 2px solid #ddd;
+	transition: all .1s linear;
+	dispaly: inline-bkock;
+	vertical-align: middle;
+}
+
+.theme-toggler__switch::after {
+	content: "";
+	position: relative;
+	width: 21px;
+	height: 21px;
+	margin-top: 0px;
+	margin-left: 1px;
+	border-radius: 1em;
+	background: #fff;
+	border: 1px solid #eee;
+	box-shadow: 2px 5px 10px -2px rgba(0, 0, 0, 0; 2);
+	transition: all .1s linear;
+}
+
+.theme-toggler_checkbox:focus+.theme-toggler__switch {
+	box-shadow: 0 0 0 5px #fff, 0 0 0 7px orange;
+	outline: 3px solid transparent;
+}
+
+.theme-toggler_checkbox:focus:not(:fucos-visible)+.theme-toggler__switch
+	{
+	box-shadow: none;
+}
+
+.theme-toggler_checkbox:checked+ . theme-toggler__switch {
+	background: #76D672;
+	border-color: #76D672;
+}
+
+.theme-toggler_checkbox:checked+.theme-toggler__switch {
+	transform: translatex(22px);
+	transition: transform .1s linear;
+	border-color: #fff;
+}

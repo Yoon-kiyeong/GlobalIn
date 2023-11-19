@@ -24,6 +24,12 @@
 		<b><a href="#">전자결재</a></b> 
 		<b><a href="#">공지사항</a></b> 
 		<b><a href="#">주소록</a></b>
+		
+		<div class="darkmode">
+			다크모드
+			<input type="checkbox" id="toggle" class="theme-toggler_checkbox" checked />
+			<span aria-hidden="true" class="theme-toggler__switch"></span>
+		</div>
 	</div>
 	<script>
 	var dropdown = document.getElementsByClassName("dropdown-btn");
