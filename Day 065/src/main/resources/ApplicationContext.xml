@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!-- 	<bean id="tv" class="polymorphism.SamsungTV" init-method="initMethod" destroy-method="destoryMethod"/> -->
+<!-- 	<bean id="tv" class="polymorphism.SamsungTV" lazy-init="true"/> -->
+		<bean id="tv" class="polymorphism.SamsungTV"><!-- 
+		<constructor-arg index="0" ref="sony"></constructor-arg>
+		<constructor-arg index="1" value="27000000"></constructor-arg> -->
+		<!-- <property name="Speaker" ref="apple"></property> -->
+		 </bean>
+		 
+		 <bean id="sony" class="polymorphism.SonySpeaker"></bean>
+		 <bean id="apple" class="polymorphism.AppleSpeaker"></bean>
+		 
+<!--  
+	id : 식별자 작성규칙에 의거하여 작성
+	name : 식별자 작성규칙을 따르지 않음
+	ex) name="http://www.nasver.com"
+-->
+</beans>
