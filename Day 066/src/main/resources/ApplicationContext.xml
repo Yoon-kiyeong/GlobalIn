@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+	<!-- <bean id="tv" class="polymorphism.SamsungTV" init-method="initMethod" 
+		destroy-method="destoryMethod"/> -->
+<!-- 	<bean id="tv" class="polymorphism.SamsungTV" lazy-init="true"/> -->
+
+	<!-- <bean id="tv" class="polymorphism.SamsungTV" p:speaker-ref="sony"
+		p:price="27000000"><constructor-arg index="0" ref="sony"></constructor-arg> <constructor-arg 
+			index="1" value="27000000"></constructor-arg>
+		<property name="speaker" ref="apple"></property>
+		<property name="Speaker" ref="apple"></property>
+	</bean> -->
+
+	<!-- <bean id="sony" class="polymorphism.SonySpeaker"></bean>
+	<bean id="apple" class="polymorphism.AppleSpeaker"></bean>
+
+	id : 식별자 작성규칙에 의거하여 작성 name : 식별자 작성규칙을 따르지 않음 ex) name="http://www.nasver.com" -->
+
+	<!-- <bean id="collectionBean"
+		class="com.globalin.ioc.injection.CollectionBean">
+		<property name="addressList">
+			<list> <value>서울특별시 강남구 대치동</value> <value>서울특별시 영등포구 영등포동</value> 
+				</list>
+
+			<set value-type="java.lang.String"> <value>서울특별시 강남구 대치동</value> 
+				<value>서울특별시 영등포구 영등포동</value> </set>
+
+			<map>
+				<entry>
+					<key>
+						<value>홍길동</value>
+					</key>
+					<value>서울특별시 강남구 대치동</value>
+				</entry>
+				<entry>
+					<key>
+						<value>고길동</value>
+					</key>
+					<value>서울특별시 영등포구 영등포동</value>
+				</entry>
+			</map>
+			
+			<props>
+				<prop key="공길동">서울특별시 영등포구 영등포동</prop>
+				<prop key="홍길동">서울특별시 강남구 대치동</prop>
+			</props>			
+		</property>
+	</bean> -->
+
+	<context:component-scan base-package="polymorphism"></context:component-scan>
+	<bean class="polymorphism.SonySpeaker"></bean>
+	
+	<!-- DataSource 설정 -->
+	<bean id="dataSource" class="org.apache.tomcat.dbcp.dbcp2.BasicDataSource" destroy-method="close">
+		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
+		<property name="url" value="jdbc:oracle:thin:@localhost:1521:xe"/>
+		<property name="username" value="scott"></property>
+		<property name="password" value="tiger"></property>				
+	</bean>
+
+
+
+</beans>
