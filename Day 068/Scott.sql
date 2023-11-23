@@ -129,4 +129,3 @@ insert into board(seq, title, writer, content) values (1, '가입인사', '관리자', 
 select * from board;
 commit;
 
-show user;

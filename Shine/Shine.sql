@@ -16,6 +16,7 @@ create table Employee (
     DeptNo number(4) not null,
     HireDate date not null,
     ExitDate date,
+    Status varchar2(20) not null,
     Photo BLob,
     CONSTRAINT Employee_pk primary key(no)
     );
