@@ -54,6 +54,8 @@
 	left: 20px;
 	width: 15%;
 }
+
+
 </style>
 <jsp:include page="Header.jsp" />
 <jsp:include page="Nav.jsp" />
