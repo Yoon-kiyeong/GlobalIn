@@ -1,7 +1,6 @@
-body {
-	font-family: "Lato", sans-serif;
+button {
+background-color:white;
 }
-
 .sidenav {
 	border: 2px solid #3D9970;
 	border-radius: 20px;
@@ -9,27 +8,38 @@ body {
 	position: fixed;
 	z-index: 1;
 	top: 11%;
-	height: 80%;
+	height: 70%;
 	left: 10px;
-	background-color: #fefefe;
 	overflow-x: hidden;
 	padding-top: 20px;
 }
 
-.sidenav a, .dropdown-btn {
+.sidenav a{
 	padding: 10px 0 10px 0;
 	text-decoration: none;
 	font-size: 20px;
 	color: #3D9970;
 	display: block;
 	border: none;
-	background: none;
 	width: 100%;
 	text-align: center;
 	cursor: pointer;
 	outline: none;
 }
 
+.dropdown-btn {
+ 	padding: 10px 0 10px 0;
+	text-decoration: none;
+	font-size: 20px;
+	color: #3D9970;
+	display: block;
+	border: none;
+	width: 100%;
+	text-align: center;
+	cursor: pointer;
+	outline: none;
+}
+ 
 .sidenav a:hover, .dropdown-btn:hover {
 	background-color: #3D9970;
 	color: white;
@@ -42,10 +52,5 @@ body {
 
 .dropdown-container {
 	display: none;
-	background-color: white;
 	padding-left: 8px;
-}
-
-.dropdown-container ul {	
-	list-style-color: #3D9970;;
 }

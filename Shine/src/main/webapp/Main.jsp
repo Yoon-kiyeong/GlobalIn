@@ -4,12 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"
-	charset="utf-8"></script>
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/easy-pie-chart/2.1.6/jquery.easypiechart.min.js"
-	charset="utf-8"></script>
+<link rel="stylesheet" href="css/style.css" type="text/css">
+<script	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"	charset="utf-8"></script>
+<script	src="https://cdnjs.cloudflare.com/ajax/libs/easy-pie-chart/2.1.6/jquery.easypiechart.min.js" charset="utf-8"></script>
 <title>Insert title here</title>
 <style>
 .MainContainer {
@@ -27,8 +24,8 @@
 }
 
 .main3 {
-	top: 70%;
-	heighT: 150px;
+	top: 65%;
+	height: 150px;
 }
 
 .box {
@@ -68,6 +65,12 @@
 			<div class="box">
 				<h2>00:00</h2>
 				<div class="chart"></div>
+			</div>
+			<div class="commute">
+			<b>00:00</b>
+			<button class="inButton">출근</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<b>00:00</b>
+			<button class="outButton">퇴근</button>			
 			</div>
 		</div>
 		<div class="MainContainer main2">

@@ -4,8 +4,68 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="css/nav.css" type="text/css">
+<link rel="stylesheet" href="css/Darkmode.css" type="text/css">
+<style>
+body {
+color:#3D9970;
+}
+button {
+background-color:white;
+}
+.sidenav {
+	border: 2px solid #3D9970;
+	border-radius: 20px;
+	width: 200px;
+	position: fixed;
+	z-index: 1;
+	top: 11%;
+	height: 70%;
+	left: 10px;
+	overflow-x: hidden;
+	padding-top: 20px;
+}
+
+.sidenav a{
+	padding: 10px 0 10px 0;
+	text-decoration: none;
+	font-size: 20px;
+	color: #3D9970;
+	display: block;
+	border: none;
+	width: 100%;
+	text-align: center;
+	cursor: pointer;
+	outline: none;
+}
+
+.dropdown-btn {
+ 	padding: 10px 0 10px 0;
+	text-decoration: none;
+	font-size: 20px;
+	color: #3D9970;
+	display: block;
+	border: none;
+	width: 100%;
+	text-align: center;
+	cursor: pointer;
+	outline: none;
+}
+ 
+.sidenav a:hover, .dropdown-btn:hover {
+	background-color: #3D9970;
+	color: white;
+}
+
+.active {
+	background-color: #3D9970;
+	color: white;
+}
+
+.dropdown-container {
+	display: none;
+	padding-left: 8px;
+}
+</style>
 <title>Insert title here</title>
 </head>
 <body>
@@ -23,15 +83,14 @@
 		<b><a href="#">일정관리</a></b> 
 		<b><a href="#">전자결재</a></b> 
 		<b><a href="#">공지사항</a></b> 
-		<b><a href="#">주소록</a></b>
-		
-		<div class="darkmode">
-			다크모드
-			<input type="checkbox" id="toggle" class="theme-toggler_checkbox" checked />
-			<span aria-hidden="true" class="theme-toggler__switch"></span>
+		<b><a href="#">주소록</a></b>	 
+	<div class="darkmode_div">
+			<b>다크모드</b><input role="switch" type="checkbox" class="darkmode" onclick="darkMode()">
 		</div>
 	</div>
 	<script>
+	
+	//dropdown Script
 	var dropdown = document.getElementsByClassName("dropdown-btn");
 	var i;
 
@@ -46,6 +105,16 @@
 	    }
 	  });
 	}
+
+	
+	function darkMode(){
+		var dropdown = document.querySelector(".dropdown-btn");
+		var element = document.body;
+		element.classList.toggle('on');
+		dropdown.classList.toggle('on');
+	}
+	
+	
 </script>
 </body>
 </html>

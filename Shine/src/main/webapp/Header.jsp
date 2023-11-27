@@ -14,7 +14,7 @@
 .button {
 	background-color: #3D9970;
 	color:white;
-	border: 2px solid white;
+	border: 2px solid #3D9970;
 	border-radius:15px;
 	padding:13px 13px;
 	font-size:16px;
