@@ -1,0 +1,8 @@
+Spring을 가져다 쓰기 위해  webmvc/web.servlet패키지의 DispatcherServlet클래스를 가져옴
+서버를 가동할 시 500에러가 발생한븐데 action-servlet.xml이 존재하지 않기 때문에 500에러 발생함
+자동으로 servlet-name + -servlet.xml 을 찾아서 가는데 만들어 놓지 않았기 때문에 에러가 발생함
+
+action-servlet.xml을 생성 후 서버를 실행하면 404에러가 발생하지만, 콘솔에는 에러가 없음
+왜냐하면 xml파일을 만들어주기는 했지만, bean을 만들어주지 않았기 때문이다.
+
+bean이 설정되어 있는 config의 위치를 설정해 주기 위해 servlet에 init-param을 설정해준다
