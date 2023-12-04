@@ -1,120 +1,35 @@
-
-.login-box {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	width: 400px;
-	padding: 40px;
-	transform: translate(-50%, -50%);
-	background: #3D9970;
-	box-sizing: border-box;
-	box-shadow: 0 15px 25px #3D9970;
-	border-radius: 10px;
-}
-
-.login-box h2 {
-	margin: 0 0 30px;
-	padding: 0;
-	color: #fff;
-	text-align: center;
-}
-
-.login-box .user-box {
-	position: relative;
-}
-
-.login-box .user-box input {
-	width: 100%;
-	padding: 10px 0;
-	font-size: 16px;
-	color: #fff;
-	margin-bottom: 30px;
-	border: none;
-	border-bottom: 1px solid #fff;
-	outline: none;
-	background: transparent;
-}
-
-.login-box .user-box label {
-	position: absolute;
-	top: 0;
-	left: 0;
-	padding: 10px 0;
-	font-size: 16px;
-	color: #fff;
-	pointer-events: none;
-	transition: .5s;
-}
-
-.login-box .user-box input:focus ~ label, .login-box .user-box input:valid 
-	 ~ label {
-	top: -20px;
-	color: #fff;
-	left: 0;
-	font-size: 12px;
-}
-
-.login-box form #submit {
-	position: relative;
-	display: inline-block;
-	padding: 10px 20px;
-	color: #3D9970;
-	font-size: 16px;
-	text-decoration: none;
-	text-transform: uppercase;
-	overflow: hidden;
-	transition: .5s;
-	margin-top: 40px;
-	letter-spacing: 4px;
-	border-color: #fff;
-}
-
-.login-box #submit:hover {
-	background: #3D9970;
-	color: #fff;
-	border-radius: 5px;
-}
-
-img {
-	width:145px;
-	height:80px;
-}
-
-.header-right{
-	float:right;
-}
-
-.button {
+/*
+메인 스타일 css
+작성자 : 윤기영
+*/
+/* 버튼 CSS*/
+button {
 	background-color: #3D9970;
-	color:white;
-	border: 2px solid white;
-	border-radius:15px;
-	padding:13px 13px;
-	font-size:16px;
+	color: white;
+	border: 2px solid #3D9970;
+	border-radius: 15px;
+	padding: 13px 15px;
+	font-size: 16px;
 }
 
-.button:hover{
-	background-color:white;
-	color:#3D9970;
+/* 버튼 호버 CSS*/
+button:hover {
+	background-color: white;
+	color: #3D9970;
 	transition-duration: 0.3s;
-	border:2px solid #3D9970;
-	cursor:pointer;
+	border: 2px solid #3D9970;
+	cursor: pointer;
 }
 
-.inButton {
-background-color: #3D9970;
-	color:white;
-	border: 2px solid white;
-	border-radius:15px;
-	padding:13px 13px;
-	font-size:16px;
+/* 메인 CSS*/
+.MainContainer {
+	border: 2px solid #3D9970;
+	border-radius: 13px;
+	color: #3D9970;
 }
 
-.outButton {
-background-color: #3D9970;
-	color:white;
-	border: 2px solid white;
-	border-radius:15px;
-	padding:13px 13px;
-	font-size:16px;
+/* 메인 a 태그 CSS*/
+.MainContainer a {
+	text-decoration: none;
+	color: #3D9970;
 }
