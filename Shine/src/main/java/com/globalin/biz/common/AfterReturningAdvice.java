@@ -6,7 +6,7 @@ import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.stereotype.Service;
 
-import com.globalin.biz.employee.EmployeeVO;
+import com.globalin.biz.user.UserVO;
 
 @Service
 @Aspect
@@ -20,8 +20,8 @@ public class AfterReturningAdvice {
 		
 		String method = jp.getSignature().getName();
 		
-		if(returnObj instanceof EmployeeVO) {
-			EmployeeVO user = (EmployeeVO)returnObj;
+		if(returnObj instanceof UserVO) {
+			UserVO user = (UserVO)returnObj;
 			if(user.getName().equals("Admin")) {
 				System.out.println(user.getName()+"로그인(Admin)");
 			}

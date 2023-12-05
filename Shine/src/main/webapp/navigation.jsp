@@ -24,7 +24,7 @@
 	<b><a href="calender.jsp">캘린더</a></b>
 	<b><a href="approval.jsp">전자결재</a></b>
 	<b><a href="notice.jsp">공지사항</a></b>
-	<b><a href="address.jsp">주소록</a></b>
+	<b><a href="address.jsp">조직도</a></b>
 	<div class="darkmode_div">
 		<b>다크모드</b><input role="switch" type="checkbox" class="darkmode" onclick="darkMode()">
 	</div>
