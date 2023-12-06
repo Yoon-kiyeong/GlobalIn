@@ -10,10 +10,10 @@ import com.globalin.biz.user.impl.UserDAO;
 @Controller
 //@SessionAttribute("main")
 public class MainController {
-	@RequestMapping("/main.do")
-	public String main(UserVO vo, UserDAO dao, Model model) {
-		System.out.println("메인 페이지 처리");
-		model.addAttribute("main", dao.getMain(vo));
-	}
+//	@RequestMapping("/main.do")
+//	public String main(UserVO vo, UserDAO dao, Model model) {
+//		System.out.println("메인 페이지 처리");
+//		model.addAttribute("main", dao.getMain(vo));
+//	}
 
 }
