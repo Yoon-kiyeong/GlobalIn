@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt"%>
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,13 +24,14 @@
 	border: 2px solid #3D9970;
 	cursor: pointer;
 }
+
 </style>
 </head>
 <body>
-	<a href="main.jsp"><img class="logo" src="Logo1 (2).png"></a>
-	<div class="header-right">
-		${userName}님
-		<button class="logout" onclick="location.href='/logout.jsp';">로그아웃</button>
-	</div>
+<a href="Index.jsp"><img class="logo" src="Logo.png"></a>
+<div class="header-right">
+님
+<button class="logout">로그아웃</button>
+</div>
 </body>
 </html>

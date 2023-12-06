@@ -59,5 +59,3 @@ drop table commute;
 drop table employee;
 
 commit;
-
-select * from employee where id = 'test' and pw = 'test1234';
