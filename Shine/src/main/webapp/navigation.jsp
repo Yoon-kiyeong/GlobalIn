@@ -4,9 +4,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="css/darkmode.css" type="text/css">
+<link rel="stylesheet" href="css/style.css" type="text/css">
 <link rel="stylesheet" href="css/navigation.css" type="text/css">
-<script type="text/javascript" src="js/darkmode.js"></script>
+<link rel="stylesheet" href="css/darkmode.css" type="text/css">
+<script type="text/javascript" src="js/dark.js"></script>
 <title>Insert title here</title>
 </head>
 <body>

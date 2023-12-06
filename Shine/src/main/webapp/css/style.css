@@ -29,11 +29,9 @@
 .MainContainer {
 	border: 2px solid #3D9970;
 	border-radius: 13px;
-	color: #3D9970;
 }
 
 /* 메인 a 태그 CSS*/
 .MainContainer a {
 	text-decoration: none;
-	color: #3D9970;
 }

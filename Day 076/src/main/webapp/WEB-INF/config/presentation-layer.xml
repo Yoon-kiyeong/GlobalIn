@@ -8,7 +8,7 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
 	
 	<context:component-scan base-package="com.globalin.view"></context:component-scan>
-	<mvc:annotation-driven></mvc:annotation-driven>
+	<!-- <mvc:annotation-driven></mvc:annotation-driven> -->
 	
 	
 	<!-- 파일 업로드 -->
@@ -16,5 +16,42 @@
 		<property name="maxUploadSize" value="100000"/>
 	</bean>
 	
+	<!-- 예외 처리 설정  --> 
+	<bean id="exceptionResolve" class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+		<property name="exceptionMappings">
+			<props>
+				<prop key="java.lang.ArithmeticException">
+					common/artithmeticError.jsp
+				</prop>
+				
+				<prop key="java.lang.NullPointerException">
+					common/nullPointerError.jsp
+				</prop>
+			</props>
+		</property>
+		<property name="defaultErrorView" value="common/error.jsp"></property>
+	</bean>
 	
+	<!-- 다국어 설정 -->
+	<!-- MessageSource 등록 -->
+	<!-- bean의 아이디는 미리 정해져 있다 -->
+	<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+		<property name="basenames">
+			<list>
+				<value>message.messageSource</value>
+			</list>
+		</property>
+	</bean>
+	
+	<!-- LocaleResolver(지역) 등록 -->
+	<bean id="localeResolver" class="org.springframework.web.servlet.i18n.SessionLocaleResolver">
+	</bean>
+	
+	
+	<!-- LocaleChangeInterCeptor 등록 -->
+	<mvc:interceptors>
+		<bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
+			<property name="paramName" value="lang"></property>
+		</bean>
+	</mvc:interceptors>
 </beans>

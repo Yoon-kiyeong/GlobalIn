@@ -39,11 +39,11 @@
 }
 
 .mainLink {
-	font-size: 24px; color : #3D9970;
+	font-size: 24px; 
+	color : #3D9970;
 	position: relative;
 	left: 3%;
 	top: 3%;
-	color: #3D9970;
 }
 
 .commute {
