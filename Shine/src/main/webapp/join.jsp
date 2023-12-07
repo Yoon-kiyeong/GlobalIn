@@ -13,18 +13,18 @@
 .MainContainer {
 	position: fixed;
 	width: 60%;
-	height: 80%;
+	height: 85%;
 	left: 25%;
 	overflow:auto;
 }
 
-input[type='text'], input[type='file'] {
+input[type='text'], input[type='file'], input[type='date'] {
 	background-color: white;
 	border: 2px solid #3D9970;
 	border-radius: 15px;
 	padding: 5px 10px;
-	font-size: 16px;
 	margin-left: 15px;
+	font-size: 16px;
 	margin-top:5px;
 	margin-bottom:5px;
 }
@@ -124,14 +124,14 @@ input[type='password'] {
 	<form action="join.do" method="post" class="formClass">
 		<div class="MainContainer" align="center">
 			<div class="main">
-			<table border="0" cellspacing="0" cellpadding="0" class="formContainer" width="900px">
+			<table border="0" cellspacing="0" cellpadding="0" class="formContainer" width="950px">
 			<tr>
 				<td><b>아이디</b></td> 
 				<td><input type="text" width="200px" ></td>
 			</tr>
 			<tr>
 				<td><b>비밀번호</b></td>
-				<td><input type="password" id="pw" width="200px" class="passWord">
+				<td><input type="password" id="pw" width="200px" class="password">
 				<br>
 				<div class="progress-bar_wrap">
 					<div class="progress-bar_item progress-bar_item-1"></div>
@@ -143,7 +143,7 @@ input[type='password'] {
 			</tr>
 			<tr>
 				<td><b>비밀번호 확인</b></td>
-				<td><input type="password" width="200px;" class="passWordFieldRepeat">
+				<td><input type="password" width="200px;" class="passwordRepeat">
 				<br>
 				<div class="progress-bar_wrap">
 					<div class="progress-bar_item-rep progress-bar_item-1-rep"></div>
@@ -152,6 +152,7 @@ input[type='password'] {
 				</div>
 				<span class="progress-bar_text-rep">비밀번호가 비어있습니다.</span>
 				</td>
+			</tr>
 			<tr>
 				<td><b>이름</b></td> 
 				<td><input type="text" width="200px" id="name"></td>
@@ -195,11 +196,11 @@ input[type='password'] {
 			</tr>
 			<tr>
 				<td><b>입사일자</b></td>
-				<td>asdf</td>
+				<td><input type="date"/></td>
 			</tr>
 			<tr>
 				<td><b>퇴사일자</b></td>
-				<td>qwer</td>
+				<td><input type="date"/></td>
 			</tr>
 			<tr>
 				<td><b>재직상태</b></td>
@@ -233,7 +234,7 @@ input[type='password'] {
 			el.text(text).css('color',color);
 		};
 		
-		$('.passWord').keyup(function(){
+		$('.password').keyup(function(){
 			let len = this.value.length;
 			const pbText = $('.formClass .progress-bar_text');
 			
@@ -258,8 +259,31 @@ input[type='password'] {
 				changeText(pbText, 'OK!');
 			}
 		});
-	});
-		
+			$('.passwordRepeat').keyup(function(){
+				len = this. value. length;
+				const pbText = $('.progress-bar_text-rep');
+				
+				if(len === 0) {
+					$('.progress-bar_item-rep').each(function() {
+						$(this).removeClass('active').css('background-color','#F6F6FA');
+					});
+					changeText(pbText, '비밀번호를 입력해주세요.');
+				} else if($('.password').val() != $('.passwordRepeat').val()) {
+					$(' .progress-bar_item-1-rep').addClass('active').css('background-color','#FF4B47');
+		            $(' .progress-bar_item-2-rep').removeClass('active').css('background-color','#FF4B47');
+		            $(' .progress-bar_item-3-rep').removeClass('active').css('background-color','#FF4B47');
+					changeText(pbText, '비밀번호가 다릅니다');
+				} else {
+					$('.progress-bar_item-rep').each(function(){
+						$(this).addClass('active').css('background-color','#2DAF7D');
+					});
+					changeText(pbText, '비밀번호가 일치합니다');
+				}
+			});
+		});
+
+	
+	
 	</script>
 </body>
 </html>
