@@ -124,7 +124,7 @@ input[type='password'] {
 	<form action="join.do" method="post" class="formClass">
 		<div class="MainContainer" align="center">
 			<div class="main">
-			<table border="0" cellspacing="0" cellpadding="0" class="formContainer" width="1000px">
+			<table border="0" cellspacing="0" cellpadding="0" class="formContainer" width="900px">
 			<tr>
 				<td><b>아이디</b></td> 
 				<td><input type="text" width="200px" ></td>
@@ -250,7 +250,7 @@ input[type='password'] {
 			} else if(len > 4 && len <= 8) {
 				$('.formClass .progress-bar_item-2').addClass('active');
 				$('.formClass .progress-bar_item-3').removeClass('active');
-				changeText(pbText, '비밀번호 길이는 최소 10자 이상이어야 합니다');
+				changeText(pbText, '비밀번호 길이는 최소 8자 이상이어야 합니다');
 			} else {
 				$('.formClass .progress-bar_item').each(function(){
 					$(this).addClass('active');
